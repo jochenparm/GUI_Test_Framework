@@ -54,6 +54,10 @@
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Shouldly, Version=2.8.1.0, Culture=neutral, PublicKeyToken=6042cbcb05cbc941, processorArchitecture=MSIL">
+      <HintPath>..\packages\Shouldly.2.8.1\lib\net40\Shouldly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,21 +77,118 @@
       <HintPath>..\packages\TestStack.White.ScreenObjects.0.13.3\lib\net40\TestStack.White.ScreenObjects.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\General\Test_AccountsGeneralScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\IMAP\Test_AccountsIMAP.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Incoming\Test_AccountsIncomingScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Outgoing\Test_AccountsOutgoingScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Sync\Test_SyncSettingsScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Tests_FileMenuScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Tests_InboxTabScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Tests_MainWindowScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Tests_SettingsMenuScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Test_AccountSettingsScreen.cs" />
     <Compile Include="UiMaps\MainWindow\IMainWindowScreen.cs" />
     <Compile Include="UiMaps\MainWindow\MainWindowScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\Factory\IMenuFactory.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\Factory\MenuFactoryWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\File\FileMenuScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\File\IFileMenuScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\IMenuScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\MenuScreenWhite.cs" />
     <Compile Include="UiMaps\MainWindow\ScreenFactory\IScreenFactory.cs" />
     <Compile Include="UiMaps\MainWindow\ScreenFactory\ScreenFactoryWhite.cs" />
-    <Compile Include="UiMaps\MainWindow\ToolBar\IToolBarScreen.cs" />
-    <Compile Include="UiMaps\MainWindow\ToolBar\ToolBarScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\StatusBar\IStatusBarScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\StatusBar\StatusBarScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\EventLog\EventLogTabScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\EventLog\IEventLogTabScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\EventLog\ToolBar\EventLogToolBarScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\EventLog\ToolBar\IEventLogToolBarScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Factory\ITabFactory.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Factory\TabFactoryWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Inbox\IInboxTabScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Inbox\InboxTabScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Inbox\ToolBar\Factory\IInboxToolBarFactory.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Inbox\ToolBar\Factory\InboxToolBarFactoryWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Inbox\ToolBar\IInboxToolBarScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Inbox\ToolBar\InboxToolBarScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\ITabsScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\RecycleBin\IRecycleBinTabScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\RecycleBin\RecycleBinTabScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\RecycleBin\ToolBar\Factory\IRecycleBinToolBarFactory.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\RecycleBin\ToolBar\Factory\RecycleBinToolBarFactoryWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\RecycleBin\ToolBar\IRecycleBinToolBarScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\RecycleBin\ToolBar\RecycleBinToolBarScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\Factory\AccountsSettingsFactoryWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\Factory\IAccountsSettingsFactory.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\General\AccountsGeneralScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\General\IAccountsGeneralScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\IMAP\AccountsIMAPScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\IMAP\IAccountsIMAPScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\Incoming\AccountsIncomingScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\Incoming\IAccountsIncomingScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\Outgoing\AccountsOutgoingScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\Outgoing\IAccountsOutgoingScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Display\DisplaySettingsScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Display\IDisplaySettingsScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\Application\GeneralApplicationScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\Application\IGeneralApplicationScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\GeneralSettingsScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\IGeneralSettingsScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\ISettingsTabScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\AccountsSettingsScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\IAccountsSettingsScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Factory\ISettingsTabFactory.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Factory\SettingsTabFactoryWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\IRecycleBinSettingsScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\RecycleBinSettingsScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\SettingsTabScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\SpamTools\ISpamToolsSettingsScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\SpamTools\SpamToolsSettingsScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Sync\ISyncSettingsScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\Sync\SyncSettingsScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\TabsScreenWhite.cs" />
+    <Compile Include="UiMaps\ScreenFactory\IScreenFactory.cs" />
+    <Compile Include="UiMaps\ScreenFactory\ScreenFactoryWhite.cs" />
+    <Compile Include="UiMaps\UiMap.cs" />
+    <Compile Include="UiMaps\UiMapItems\Button\ButtonWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\Button\IButton.cs" />
+    <Compile Include="UiMaps\UiMapItems\Button\ListItemToButtonWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\Button\MenuItemToButtonWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\Button\TabPageToButtonWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\Button\LabelToButtonWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\CheckBox\CheckBoxWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\CheckBox\ICheckBox.cs" />
+    <Compile Include="UiMaps\UiMapItems\DropDownMenu\DropDownMenuWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\DropDownMenu\IDropDownMenu.cs" />
+    <Compile Include="UiMaps\UiMapItems\RadioButton\IRadioButton.cs" />
+    <Compile Include="UiMaps\UiMapItems\RadioButton\RadioButtonWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\TextBox\ITextBox.cs" />
+    <Compile Include="UiMaps\UiMapItems\TextBox\TextBoxWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\TextLabel\ITextLabel.cs" />
+    <Compile Include="UiMaps\UiMapItems\TextLabel\TextLabelWhite.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UiMaps\MainWindow\TreeView\" />
+    <Folder Include="FunctionalLibrary\" />
+    <Folder Include="UiMaps\MainWindow\Menu\Email\" />
+    <Folder Include="UiMaps\MainWindow\Menu\Help\" />
+    <Folder Include="UiMaps\MainWindow\Menu\View\" />
+    <Folder Include="UiMaps\MainWindow\Tabs\Settings\General\CheckingMail\" />
+    <Folder Include="UiMaps\MainWindow\Tabs\Settings\General\Factory\" />
+    <Folder Include="UiMaps\MainWindow\Tabs\Settings\General\Notifications\" />
+    <Folder Include="UiMaps\MainWindow\Tabs\Settings\General\Performance\" />
+    <Folder Include="UiMaps\MainWindow\Tabs\Settings\General\Updates\" />
+    <Folder Include="UiMaps\MainWindow\Tabs\Settings\General\WashingMail\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

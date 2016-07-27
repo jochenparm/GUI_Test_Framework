@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Test.UiMaps.MainWindow.Menu;
+using Test.UiMaps.MainWindow.StatusBar;
+using Test.UiMaps.MainWindow.Tabs;
 
-namespace Test.UiMaps.ScreenFactory
+namespace Test.UiMaps.MainWindow.ScreenFactory
 {
     internal interface IScreenFactory
     {
+        IStatusBarScreen PopulateStatusBarScreen();
 
+        ITabsScreen PopulateTabsScreen();
+
+        IMenuScreen PopulateMenuScreen();
     }
 }
