@@ -15,28 +15,26 @@ namespace Test.TestSuite.UiMapLevel.Settings.Accounts.IMAP
         [SetUp]
         public void SetUp()
         {
-            UiMap.Init();
-            UiMap.MainWindow.SettingsTab_Button.Click();
-            UiMap.MainWindow.Tabs.Settings.Accounts_Button.Click();
-            UiMap.MainWindow.Tabs.Settings.Accounts.IMAP_Button.Click();
+            MailWasher.Init();
+            MailWasher.Navigator.Settings.Accounts.IMAP.Navigate();
         }
 
         [Test]
         public void Verify_Refresh_Button_Is_OnScreen_On_Start()
         {
-            UiMap.MainWindow.Tabs.Settings.Accounts.IMAP.Refresh_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.IMAP.Refresh_Button.IsOnScreen.ShouldBeTrue();
         }
 
         [Test]
         public void Verify_Save_Button_Is_OnScreen_On_Start()
         {
-            UiMap.MainWindow.Tabs.Settings.Accounts.IMAP.Save_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.IMAP.Save_Button.IsOnScreen.ShouldBeTrue();
         }
 
         [TearDown]
         public void TearDown()
         {
-            UiMap.DeInit();
+            MailWasher.DeInit();
         }
     }
 }

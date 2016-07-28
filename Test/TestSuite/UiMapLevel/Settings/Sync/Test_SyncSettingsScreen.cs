@@ -10,27 +10,26 @@ namespace Test.TestSuite.UiMapLevel.Settings.Sync
         [SetUp]
         public void SetUp()
         {
-            UiMap.Init();
-            UiMap.MainWindow.SettingsTab_Button.Click();
-            UiMap.MainWindow.Tabs.Settings.Sync_Button.Click();
+            MailWasher.Init();
+            MailWasher.Navigator.Settings.Sync.Navigate();
         }
 
         [Test]
         public void Verify_Account_Button_Is_OnScreen_On_Start()
         {
-            UiMap.MainWindow.Tabs.Settings.Sync.Account_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Tabs.Settings.Sync.Account_Button.IsOnScreen.ShouldBeTrue();
         }
 
         [Test]
         public void Verify_Mobile_Button_Is_OnScreen_On_Start()
         {
-            UiMap.MainWindow.Tabs.Settings.Sync.Mobile_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Tabs.Settings.Sync.Mobile_Button.IsOnScreen.ShouldBeTrue();
         }
 
         [TearDown]
         public void TearDown()
         {
-            UiMap.DeInit();
+            MailWasher.DeInit();
         }
     }
 }

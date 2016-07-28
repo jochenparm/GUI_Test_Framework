@@ -1,36 +1,29 @@
-﻿using System.Threading;
-using Test.UiMaps.MainWindow;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Test.UiMaps.ScreenFactory;
-using TestStack.White;
 using TestStack.White.ScreenObjects;
 
 namespace Test.UiMaps
 {
-    public static class UiMap
+    public class UiMap : IUiMap
     {
-        private static Application _application;
-        private static ScreenRepository _screenRepository;
-        private static IScreenFactory _screenFactory;
+        private readonly ScreenRepository _screenRepository;
+        private readonly IScreenFactory _screenFactory;
 
-        public static void Init()
+        public UiMap(ScreenRepository screenRepository)
         {
-            _application = Application.Launch(Constants.applicationPath);
-            _screenRepository = new ScreenRepository(_application);
-            _screenFactory = new ScreenFactoryWhite(_screenRepository);
-            Thread.Sleep(7000);
+            this._screenRepository = screenRepository;
+            this._screenFactory = new ScreenFactoryWhite(this._screenRepository);
         }
 
-        public static void DeInit()
-        {
-            _application.Close();
-            Thread.Sleep(2000);
-        }
-
-        public static IMainWindowScreen MainWindow
+        MainWindow.IMainWindowScreen IUiMap.MainWindow
         {
             get
             {
-                return _screenFactory.PopulateMainWindowScreen();
+                return this._screenFactory.PopulateMainWindowScreen();
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿using Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar.Factory;
+﻿using Test.UiMaps.MainWindow.Tabs.RecycleBin.Factory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -6,12 +6,12 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin
 {
     public class RecycleBinTabScreenWhite : AppScreen, IRecycleBinTabScreen
     {
-        private readonly IRecycleBinToolBarFactory _toolBarFactory;
+        private readonly IRecycleBinFactory _toolBarFactory;
 
         public RecycleBinTabScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
         {
-            this._toolBarFactory = new RecycleBinToolBarFactoryWhite(screenRepository);
+            this._toolBarFactory = new RecycleBinFactoryWhite(screenRepository);
         }
 
         ToolBar.IRecycleBinToolBarScreen IRecycleBinTabScreen.ToolBar
@@ -19,6 +19,14 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin
             get
             {
                 return this._toolBarFactory.PopulateRecycleBinToolBarScreen();
+            }
+        }
+
+        SearchBar.IRecycleBinSearchBarScreen IRecycleBinTabScreen.SearchBar
+        {
+            get
+            {
+                return this._toolBarFactory.PopulateRecycleBinSearchBarScreen();
             }
         }
     }

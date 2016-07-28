@@ -10,44 +10,44 @@ namespace Test.TestSuite.UiMapLevel
         [SetUp]
         public void SetUp()
         {
-            UiMap.Init();
-            UiMap.MainWindow.InboxTab_Button.Click();
+            MailWasher.Init();
+            MailWasher.Navigator.Inbox.Navigate();
         }
 
         [Test]
         public void Verify_CheckMail_Button_Is_OnScreen_On_Start()
         {
-            UiMap.MainWindow.Tabs.Inbox.ToolBar.CheckMail_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Tabs.Inbox.ToolBar.CheckMail_Button.IsOnScreen.ShouldBeTrue();
         }
 
         [Test]
         public void Verify_DisplayOptions_Button_Is_OnScreen_On_Start()
         {
-            UiMap.MainWindow.Tabs.Inbox.ToolBar.DisplayOptions_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Tabs.Inbox.ToolBar.DisplayOptions_Button.IsOnScreen.ShouldBeTrue();
         }
 
         [Test]
         public void Verify_MailProgram_Button_Is_OnScreen_On_Start()
         {
-            UiMap.MainWindow.Tabs.Inbox.ToolBar.MailProgram_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Tabs.Inbox.ToolBar.MailProgram_Button.IsOnScreen.ShouldBeTrue();
         }
 
         [Test]
         public void Verify_SearchInbox_Button_Is_OnScreen_On_Start()
         {
-            UiMap.MainWindow.Tabs.Inbox.ToolBar.SearchInbox_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Tabs.Inbox.ToolBar.SearchInbox_Button.IsOnScreen.ShouldBeTrue();
         }
 
         [Test]
         public void Verify_WashMail_Button_Is_OnScreen_On_Start()
         {
-            UiMap.MainWindow.Tabs.Inbox.ToolBar.WashMail_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Tabs.Inbox.ToolBar.WashMail_Button.IsOnScreen.ShouldBeTrue();
         }
 
         [TearDown]
         public void TearDown()
         {
-            UiMap.DeInit();
+            MailWasher.DeInit();
         }
     }
 }
