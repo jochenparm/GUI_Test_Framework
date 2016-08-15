@@ -1,7 +1,9 @@
-﻿namespace Test.UiMaps.MainWindow.Tabs.Inbox
+﻿using Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar;
+
+namespace Test.UiMaps.MainWindow.Tabs.Inbox
 {
     public interface IInboxTabScreen
     {
-        UiMaps.MainWindow.Tabs.Inbox.ToolBar.IInboxToolBarScreen ToolBar { get; }
+        IInboxToolBarScreen ToolBar { get; }
     }
 }

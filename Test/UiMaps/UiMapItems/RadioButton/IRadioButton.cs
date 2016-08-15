@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Test.UiMaps.UiMapItems.RadioButton
 {
-    public interface IRadioButton
+    public interface IRadioButton : IUiMapItem
     {
         void Select();
 
         bool IsSelected { get; }
-        bool IsOnScreen { get; }
-        bool IsEnabled { get; }
     }
 }

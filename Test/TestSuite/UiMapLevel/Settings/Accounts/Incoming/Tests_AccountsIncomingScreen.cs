@@ -10,7 +10,7 @@ using Test.UiMaps;
 namespace Test.TestSuite.UiMapLevel.Settings.Accounts.Incoming
 {
     [TestFixture, Property("UiMap", "Accounts_Settings_Incoming_UIITems")]
-    public class Test_AccountsIncomingScreen_Basic_Settings
+    public class Tests_AccountsIncomingScreen_Basic_Settings
     {
         [SetUp]
         public void SetUp()
@@ -75,14 +75,13 @@ namespace Test.TestSuite.UiMapLevel.Settings.Accounts.Incoming
     }
 
     [TestFixture, Property("UiMap", "Accounts_Settings_Incoming_UIITems")]
-    public class Test_AccountsIncomingScreen_Advanced_Settings
+    public class Tests_AccountsIncomingScreen_Advanced_Settings
     {
         [SetUp]
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.Navigator.Settings.Accounts.Incoming.Navigate();
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Advanced_Button.Click();
+            MailWasher.Navigator.Settings.Accounts.Incoming.Advanced.Navigate();
         }
 
         [Test]

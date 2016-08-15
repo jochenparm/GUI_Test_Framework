@@ -1,4 +1,5 @@
-﻿using Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar.Factory;
+﻿using Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar;
+using Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar.Factory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -14,7 +15,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox
             this._toolBarFactory = new InboxToolBarFactoryWhite(screenRepository);
         }
 
-        ToolBar.IInboxToolBarScreen IInboxTabScreen.ToolBar
+        public IInboxToolBarScreen ToolBar
         {
             get
             {

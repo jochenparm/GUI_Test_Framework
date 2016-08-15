@@ -12,7 +12,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar.Factory
             this.screenRepository = screenRepository;
         }
 
-        IInboxToolBarScreen IInboxToolBarFactory.PopulateInboxToolBarScreen()
+        public IInboxToolBarScreen PopulateInboxToolBarScreen()
         {
             return this.screenRepository.Get<InboxToolBarScreenWhite>(x => x.StartsWith(Constants.applicationName), InitializeOption.NoCache);
         }

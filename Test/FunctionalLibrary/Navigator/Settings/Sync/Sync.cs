@@ -12,5 +12,21 @@ namespace Test.FunctionalLibrary.Navigator.Settings.Sync
         {
             MailWasher.UiMap.MainWindow.Tabs.Settings.Sync_Button.Click();
         }
+
+        public Account.IAccount Account
+        {
+            get
+            {
+                return new Account.Account();
+            }
+        }
+
+        public Mobile.IMobile Mobile
+        {
+            get
+            {
+                return new Mobile.Mobile();
+            }
+        }
     }
 }

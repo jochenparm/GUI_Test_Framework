@@ -1,15 +1,16 @@
 ﻿namespace Test.UiMaps.UiMapItems.CheckBox
 {
-    public class CheckBoxWhite : ICheckBox
+    public class CheckBoxWhite : UiMapItemWhite, ICheckBox
     {
         private TestStack.White.UIItems.CheckBox _checkBox;
 
         public CheckBoxWhite(TestStack.White.UIItems.CheckBox checkBox)
+            : base(checkBox)
         {
             this._checkBox = checkBox;
         }
 
-        private bool IsEnabled
+        public bool IsEnabled
         {
             get
             {
@@ -17,15 +18,7 @@
             }
         }
 
-        bool ICheckBox.IsEnabled
-        {
-            get
-            {
-                return this.IsEnabled;
-            }
-        }
-
-        private void Enable()
+        public void Enable()
         {
             if (!this.IsEnabled)
             {
@@ -33,37 +26,11 @@
             }
         }
 
-        void ICheckBox.Enable()
-        {
-            this.Enable();
-        }
-
-        private void Disable()
+        public void Disable()
         {
             if (this.IsEnabled)
             {
                 this._checkBox.Checked = false;
-            }
-        }
-
-        void ICheckBox.Disable()
-        {
-            this.Disable();
-        }
-
-        private bool IsOnScreen
-        {
-            get
-            {
-                return !(this._checkBox.IsOffScreen);
-            }
-        }
-
-        bool ICheckBox.IsOnScreen
-        {
-            get
-            {
-                return this.IsOnScreen;
             }
         }
     }

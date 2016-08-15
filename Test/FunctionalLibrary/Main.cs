@@ -13,7 +13,7 @@ namespace Test.FunctionalLibrary
         {
         }
 
-        private void Maximize_Window()
+        public void Maximize_Window()
         {
             MailWasher.UiMap.MainWindow.MaximizeWindow_Button.Click();
         }

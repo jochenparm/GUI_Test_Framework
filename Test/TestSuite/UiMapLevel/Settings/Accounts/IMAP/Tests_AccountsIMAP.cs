@@ -10,7 +10,7 @@ using Test.UiMaps;
 namespace Test.TestSuite.UiMapLevel.Settings.Accounts.IMAP
 {
     [TestFixture, Property("UiMap", "Accounts_Settings_IMAP_UIITems")]
-    public class Test_AccountsIMAP
+    public class Tests_AccountsIMAP
     {
         [SetUp]
         public void SetUp()

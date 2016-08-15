@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Test.FunctionalLibrary.Navigator.Settings.Accounts;
+using Test.FunctionalLibrary.Navigator.Settings.General;
+using Test.FunctionalLibrary.Navigator.Settings.RecycleBin;
 using Test.FunctionalLibrary.Navigator.Settings.Sync;
 
 namespace Test.FunctionalLibrary.Navigator.Settings
@@ -12,5 +14,7 @@ namespace Test.FunctionalLibrary.Navigator.Settings
     {
         IAccounts Accounts { get; }
         ISync Sync { get; }
+        IGeneral General { get; }
+        IRecycleBin RecycleBin { get; }
     }
 }

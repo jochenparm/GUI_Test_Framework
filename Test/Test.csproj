@@ -35,11 +35,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0-beta\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0-beta\lib\nunit.core.interfaces.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
@@ -47,11 +47,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0-beta\lib\nunit.util.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=1.9.9.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0-beta\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
@@ -111,11 +111,35 @@
     <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\IAccounts.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\IMAP\IIMAP.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\IMAP\IMAP.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\Incoming\Advanced\Advanced.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\Incoming\Advanced\IAdvanced.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\Incoming\IIncoming.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\Incoming\Incoming.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\Outgoing\Advanced\Advanced.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\Outgoing\Advanced\IAdvanced.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\Outgoing\IOutgoing.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\Accounts\Outgoing\Outgoing.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\Application\Application.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\Application\IApplication.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\CheckingMail\CheckingMail.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\CheckingMail\ICheckingMail.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\General.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\IGeneral.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\Notifications\INotifications.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\Notifications\Notifications.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\Performance\IPerformance.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\Performance\Performance.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\Updates\IUpdates.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\Updates\Updates.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\WashingMail\IWashingMail.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\General\WashingMail\WashingMail.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\ISettings.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\RecycleBin\General\General.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\RecycleBin\General\IGeneral.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\RecycleBin\IRecycleBin.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\RecycleBin\RecycleBin.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\RecycleBin\Restoring\IRestoring.cs" />
+    <Compile Include="FunctionalLibrary\Navigator\Settings\RecycleBin\Restoring\Restoring.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\Settings.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\Sync\Account\Account.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Settings\Sync\Account\IAccount.cs" />
@@ -125,10 +149,20 @@
     <Compile Include="FunctionalLibrary\Navigator\Settings\Sync\Sync.cs" />
     <Compile Include="MailWasher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\General\Test_AccountsGeneralScreen.cs" />
-    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\IMAP\Test_AccountsIMAP.cs" />
-    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Incoming\Test_AccountsIncomingScreen.cs" />
-    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Outgoing\Test_AccountsOutgoingScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\General\Tests_AccountsGeneralScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\IMAP\Tests_AccountsIMAP.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Incoming\Tests_AccountsIncomingScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Outgoing\Tests_AccountsOutgoingScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\General\Application\Tests_GeneralApplicationScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\General\CheckingMail\Tests_GeneralCheckingMailScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\General\Notifications\Tests_GeneralNotificationsScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\General\Performance\Tests_GeneralPerformanceScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\General\Test_GeneralSettingsScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\General\Updates\Tests_GeneralUpdatesScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\General\WashingMail\Tests_GeneralWashingMailScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\RecycleBin\General\Tests_RecycleBinGeneralScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\RecycleBin\Restoring\Tests_RecycleBinRestoringScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\RecycleBin\Tests_RecycleBinSettingsScreen.cs" />
     <Compile Include="TestSuite\UiMapLevel\Settings\Sync\Test_SyncSettingsScreen.cs" />
     <Compile Include="TestSuite\UiMapLevel\StatusBar\Tests_StatusBarScreen.cs" />
     <Compile Include="TestSuite\UiMapLevel\Tabs\RecycleBin\SearchBar\Tests_RecycleBinSearchBarScreen.cs" />
@@ -137,16 +171,22 @@
     <Compile Include="TestSuite\UiMapLevel\Tests_InboxTabScreen.cs" />
     <Compile Include="TestSuite\UiMapLevel\MainWindow\Tests_MainWindowScreen.cs" />
     <Compile Include="TestSuite\UiMapLevel\Tests_SettingsMenuScreen.cs" />
-    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Test_AccountSettingsScreen.cs" />
+    <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Tests_AccountSettingsScreen.cs" />
     <Compile Include="UiMaps\IUiMap.cs" />
     <Compile Include="UiMaps\MainWindow\IMainWindowScreen.cs" />
     <Compile Include="UiMaps\MainWindow\MainWindowScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\Email\EmailMenuScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\Email\IEmailMenuScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Menu\Factory\IMenuFactory.cs" />
     <Compile Include="UiMaps\MainWindow\Menu\Factory\MenuFactoryWhite.cs" />
     <Compile Include="UiMaps\MainWindow\Menu\File\FileMenuScreenWhite.cs" />
     <Compile Include="UiMaps\MainWindow\Menu\File\IFileMenuScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\Help\HelpMenuScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\Help\IHelpMenuScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Menu\IMenuScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Menu\MenuScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\View\IViewMenuScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Menu\View\ViewMenuScreenWhite.cs" />
     <Compile Include="UiMaps\MainWindow\ScreenFactory\IScreenFactory.cs" />
     <Compile Include="UiMaps\MainWindow\ScreenFactory\ScreenFactoryWhite.cs" />
     <Compile Include="UiMaps\MainWindow\StatusBar\IStatusBarScreen.cs" />
@@ -154,6 +194,8 @@
     <Compile Include="UiMaps\MainWindow\Tabs\EventLog\EventLogTabScreenWhite.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\EventLog\IEventLogTabScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\EventLog\ToolBar\EventLogToolBarScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\EventLog\ToolBar\Factory\EventLogToolBarFactoryWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\EventLog\ToolBar\Factory\IEventLogToolBarFactory.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\EventLog\ToolBar\IEventLogToolBarScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Factory\ITabFactory.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Factory\TabFactoryWhite.cs" />
@@ -194,13 +236,25 @@
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\IGeneralSettingsScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\Notifications\GeneralNotificationsScreenWhite.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\Notifications\IGeneralNotificationsScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\Performance\GeneralPerformanceScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\Performance\IGeneralPerformanceScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\Updates\GeneralUpdatesScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\Updates\IGeneralUpdatesScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\WashingMail\GeneralWashingMailScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\General\WashingMail\IGeneralWashingMailScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\ISettingsTabScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\AccountsSettingsScreenWhite.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\Accounts\IAccountsSettingsScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\Factory\ISettingsTabFactory.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\Factory\SettingsTabFactoryWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\Factory\IRecycleBinSettingsFactory.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\Factory\RecycleBinSettingsFactoryWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\General\IRecycleBinGeneralScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\General\RecycleBinGeneralScreenWhite.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\IRecycleBinSettingsScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\RecycleBinSettingsScreenWhite.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\Restoring\IRecycleBinRestoringScreen.cs" />
+    <Compile Include="UiMaps\MainWindow\Tabs\Settings\RecycleBin\Restoring\RecycleBinRestoringScreenWhite.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\SettingsTabScreenWhite.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\SpamTools\ISpamToolsSettingsScreen.cs" />
     <Compile Include="UiMaps\MainWindow\Tabs\Settings\SpamTools\SpamToolsSettingsScreenWhite.cs" />
@@ -222,6 +276,7 @@
     <Compile Include="UiMaps\UiMapItems\ClockBox\IClockBox.cs" />
     <Compile Include="UiMaps\UiMapItems\DropDownMenu\DropDownMenuWhite.cs" />
     <Compile Include="UiMaps\UiMapItems\DropDownMenu\IDropDownMenu.cs" />
+    <Compile Include="UiMaps\UiMapItems\IUiMapItem.cs" />
     <Compile Include="UiMaps\UiMapItems\RadioButton\IRadioButton.cs" />
     <Compile Include="UiMaps\UiMapItems\RadioButton\RadioButtonWhite.cs" />
     <Compile Include="UiMaps\UiMapItems\Slider\ISlider.cs" />
@@ -230,21 +285,14 @@
     <Compile Include="UiMaps\UiMapItems\TextBox\TextBoxWhite.cs" />
     <Compile Include="UiMaps\UiMapItems\TextLabel\ITextLabel.cs" />
     <Compile Include="UiMaps\UiMapItems\TextLabel\TextLabelWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\UiMapItemWhite.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FunctionalLibrary\Navigator\Settings\Display\" />
-    <Folder Include="FunctionalLibrary\Navigator\Settings\General\" />
-    <Folder Include="FunctionalLibrary\Navigator\Settings\RecycleBin\" />
     <Folder Include="FunctionalLibrary\Navigator\Settings\SpamTools\" />
-    <Folder Include="UiMaps\MainWindow\Menu\Email\" />
-    <Folder Include="UiMaps\MainWindow\Menu\Help\" />
-    <Folder Include="UiMaps\MainWindow\Menu\View\" />
-    <Folder Include="UiMaps\MainWindow\Tabs\Settings\General\Performance\" />
-    <Folder Include="UiMaps\MainWindow\Tabs\Settings\General\Updates\" />
-    <Folder Include="UiMaps\MainWindow\Tabs\Settings\General\WashingMail\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

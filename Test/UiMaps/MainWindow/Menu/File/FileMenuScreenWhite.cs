@@ -9,14 +9,16 @@ namespace Test.UiMaps.MainWindow.Menu.File
             : base(window, screenRepository)
         { }
 
-        protected TestStack.White.UIItems.MenuItems.Menu MnuItmCheckMail;       //MnuItmCheckMail = Menu Item "Check Mail"
-        protected TestStack.White.UIItems.MenuItems.Menu MnuItmWashMail;        //MnuItmWashMail = Menu Item "Wash Mail"
-        protected TestStack.White.UIItems.MenuItems.Menu MnuItmMailProgram;     //MnuItmMailProgram = Menu Item "Mail Program"
-        protected TestStack.White.UIItems.MenuItems.Menu MnuItmImport;          //MnuItmImport = Menu Item "Import..."
-        protected TestStack.White.UIItems.MenuItems.Menu MnuItmExport;          //MnuItmExport = Menu Item "Export..."
-        protected TestStack.White.UIItems.MenuItems.Menu MnuItmExit;            //MnuItmExit = Menu Item "Exit"
+#pragma warning disable 0649 //Field XYZ is never assigned to, and will always have its default value XX
+        private TestStack.White.UIItems.MenuItems.Menu MnuItmCheckMail;       //MnuItmCheckMail = Menu Item "Check Mail"
+        private TestStack.White.UIItems.MenuItems.Menu MnuItmWashMail;        //MnuItmWashMail = Menu Item "Wash Mail"
+        private TestStack.White.UIItems.MenuItems.Menu MnuItmMailProgram;     //MnuItmMailProgram = Menu Item "Mail Program"
+        private TestStack.White.UIItems.MenuItems.Menu MnuItmImport;          //MnuItmImport = Menu Item "Import..."
+        private TestStack.White.UIItems.MenuItems.Menu MnuItmExport;          //MnuItmExport = Menu Item "Export..."
+        private TestStack.White.UIItems.MenuItems.Menu MnuItmExit;            //MnuItmExit = Menu Item "Exit"
+#pragma warning restore 0649
 
-        private UiMapItems.Button.IButton CheckMail_Button
+        public UiMapItems.Button.IButton CheckMail_Button
         {
             get
             {
@@ -24,15 +26,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        UiMapItems.Button.IButton IFileMenuScreen.CheckMail_Button
-        {
-            get
-            {
-                return this.CheckMail_Button;
-            }
-        }
-
-        private UiMapItems.Button.IButton WashMail_Button
+        public UiMapItems.Button.IButton WashMail_Button
         {
             get
             {
@@ -40,15 +34,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        UiMapItems.Button.IButton IFileMenuScreen.WashMail_Button
-        {
-            get
-            {
-                return this.WashMail_Button;
-            }
-        }
-
-        private UiMapItems.Button.IButton MailProgram_Button
+        public UiMapItems.Button.IButton MailProgram_Button
         {
             get
             {
@@ -56,15 +42,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        UiMapItems.Button.IButton IFileMenuScreen.MailProgram_Button
-        {
-            get
-            {
-                return this.MailProgram_Button;
-            }
-        }
-
-        private UiMapItems.Button.IButton Import_Button
+        public UiMapItems.Button.IButton Import_Button
         {
             get
             {
@@ -72,15 +50,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        UiMapItems.Button.IButton IFileMenuScreen.Import_Button
-        {
-            get
-            {
-                return this.Import_Button;
-            }
-        }
-
-        private UiMapItems.Button.IButton Export_Button
+        public UiMapItems.Button.IButton Export_Button
         {
             get
             {
@@ -88,27 +58,11 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        UiMapItems.Button.IButton IFileMenuScreen.Export_Button
-        {
-            get
-            {
-                return this.Export_Button;
-            }
-        }
-
-        private UiMapItems.Button.IButton Exit_Button
+        public UiMapItems.Button.IButton Exit_Button
         {
             get
             {
                 return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmExit);
-            }
-        }
-
-        UiMapItems.Button.IButton IFileMenuScreen.Exit_Button
-        {
-            get
-            {
-                return this.Exit_Button;
             }
         }
     }

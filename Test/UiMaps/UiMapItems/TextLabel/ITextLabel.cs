@@ -1,8 +1,7 @@
 ﻿namespace Test.UiMaps.UiMapItems.TextLabel
 {
-    public interface ITextLabel
+    public interface ITextLabel : IUiMapItem
     {
-        bool IsOnScreen { get; }
         string Content { get; }
     }
 }

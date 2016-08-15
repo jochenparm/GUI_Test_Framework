@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Test.UiMaps.UiMapItems.Slider
 {
-    public interface ISlider
+    public interface ISlider : IUiMapItem
     {
         void Set_Max();
 

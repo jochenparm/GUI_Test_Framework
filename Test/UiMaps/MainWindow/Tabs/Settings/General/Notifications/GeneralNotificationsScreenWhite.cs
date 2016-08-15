@@ -19,7 +19,10 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         private TestStack.White.UIItems.CheckBox ChkBxNewMailSound; // CheckBox 'Play sound when new mail arrives'
         private TestStack.White.UIItems.CheckBox ChkBxNotSpam; // CheckBox 'Don't notify me if mail is spam'
         private TestStack.White.UIItems.CheckBox ChkBxErrorSound; // CheckBox 'Play sound when error occurs'
-
+        private TestStack.White.UIItems.Button BtnSave; // Button 'Save'
+        private TestStack.White.UIItems.Button BtnResetPopupDuration; // Button 'Reset Popup Display Duration'
+        private TestStack.White.UIItems.Slider SldrPopupDuration; // Slider 'Popup Display Duration'
+        private TestStack.White.UIItems.TextBox TxtBxSoundPath; //TextBox 'New Mail Sound Path'
 #pragma warning restore 0649 //Restores the 'is never assigned to, and will always have its default value null' warning
 
         private UiMapItems.CheckBox.ICheckBox Display_Balloon_Notification_When_New_Mail_Arrives_CheckBox
@@ -86,24 +89,68 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
             }
         }
 
+        private UiMapItems.Button.IButton Save_Button
+        {
+            get
+            {
+                return new UiMapItems.Button.ButtonWhite(this.BtnSave);
+            }
+        }
+
         UiMapItems.Button.IButton IGeneralNotificationsScreen.Save_Button
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return this.Save_Button;
+            }
+        }
+
+        private UiMapItems.Button.IButton Display_Duration_Reset_Button
+        {
+            get
+            {
+                return new UiMapItems.Button.ButtonWhite(this.BtnResetPopupDuration);
+            }
         }
 
         UiMapItems.Button.IButton IGeneralNotificationsScreen.Display_Duration_Reset_Button
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return this.Display_Duration_Reset_Button;
+            }
+        }
+
+        private UiMapItems.Slider.ISlider Display_Duration_Slider
+        {
+            get
+            {
+                return new UiMapItems.Slider.SliderWhite(this.SldrPopupDuration);
+            }
         }
 
         UiMapItems.Slider.ISlider IGeneralNotificationsScreen.Display_Duration_Slider
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return this.Display_Duration_Slider;
+            }
+        }
+
+        private UiMapItems.TextBox.ITextBox New_Mail_Sound_Path_TextBox
+        {
+            get
+            {
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxSoundPath);
+            }
         }
 
         UiMapItems.TextBox.ITextBox IGeneralNotificationsScreen.New_Mail_Sound_Path_TextBox
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return this.New_Mail_Sound_Path_TextBox;
+            }
         }
     }
 }

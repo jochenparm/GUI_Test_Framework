@@ -10,7 +10,7 @@ using Test.UiMaps;
 namespace Test.TestSuite.UiMapLevel.Settings.Accounts.General
 {
     [TestFixture, Property("UiMap", "Accounts_Settings_General_UIITems")]
-    public class Test_AccountsGeneralScreen
+    public class Tests_AccountsGeneralScreen
     {
         [SetUp]
         public void SetUp()

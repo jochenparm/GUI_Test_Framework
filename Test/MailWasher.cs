@@ -25,14 +25,14 @@ namespace Test
             Log.Information("Launched MailWasher Free");
             _application = Application.Launch(Constants.applicationPath);
             _screenRepository = new ScreenRepository(_application);
-            Thread.Sleep(7000);
+            Thread.Sleep(3250);
         }
 
         public static void DeInit()
         {
             _application.Close();
             Log.Information("Closed MailWasher Free");
-            Thread.Sleep(2000);
+            Thread.Sleep(750);
         }
 
         public static IUiMap UiMap

@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Test.UiMaps.UiMapItems.DropDownMenu
 {
-    public interface IDropDownMenu
+    public interface IDropDownMenu : IUiMapItem
     {
         void Select(string choice);
 
         string CurrentSelection { get; }
-
-        bool IsOnScreen { get; }
-
-        bool IsEnabled { get; }
     }
 }

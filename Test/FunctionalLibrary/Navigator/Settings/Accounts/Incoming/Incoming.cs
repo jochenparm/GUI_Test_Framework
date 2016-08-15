@@ -12,5 +12,13 @@ namespace Test.FunctionalLibrary.Navigator.Settings.Accounts.Incoming
         {
             MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming_Button.Click();
         }
+
+        public Advanced.IAdvanced Advanced
+        {
+            get
+            {
+                return new Advanced.Advanced();
+            }
+        }
     }
 }

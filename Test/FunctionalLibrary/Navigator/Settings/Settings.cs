@@ -28,5 +28,21 @@ namespace Test.FunctionalLibrary.Navigator.Settings
                 return new Sync.Sync();
             }
         }
+
+        public General.IGeneral General
+        {
+            get
+            {
+                return new General.General();
+            }
+        }
+
+        public RecycleBin.IRecycleBin RecycleBin
+        {
+            get
+            {
+                return new RecycleBin.RecycleBin();
+            }
+        }
     }
 }

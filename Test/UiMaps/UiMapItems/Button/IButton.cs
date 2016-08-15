@@ -1,10 +1,6 @@
 ﻿namespace Test.UiMaps.UiMapItems.Button
 {
-    public interface IButton
+    public interface IButton : IUiMapItem
     {
-        void Click();
-
-        bool IsEnabled { get; }
-        bool IsOnScreen { get; }
     }
 }

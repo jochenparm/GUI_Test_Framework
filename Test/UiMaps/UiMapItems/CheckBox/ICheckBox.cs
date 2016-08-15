@@ -1,13 +1,11 @@
 ﻿namespace Test.UiMaps.UiMapItems.CheckBox
 {
-    public interface ICheckBox
+    public interface ICheckBox : IUiMapItem
     {
-        bool IsEnabled { get; }
-
-        bool IsOnScreen { get; }
-
         void Enable();
 
         void Disable();
+
+        bool IsEnabled { get; }
     }
 }
