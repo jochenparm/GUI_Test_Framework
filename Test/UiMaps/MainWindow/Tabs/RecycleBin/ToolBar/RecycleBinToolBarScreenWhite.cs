@@ -69,7 +69,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return this.Restore_Button;
+                return this.Empty_Bin;
             }
         }
 

@@ -4,7 +4,7 @@ namespace Test.UiMaps.UiMapItems.Button
 {
     public class ButtonWhite : UiMapItemWhite, IButton
     {
-        private TestStack.White.UIItems.Button _button;
+        private readonly TestStack.White.UIItems.Button _button;
 
         public ButtonWhite(TestStack.White.UIItems.Button button)
             : base(button)

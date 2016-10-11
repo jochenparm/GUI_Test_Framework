@@ -4,7 +4,7 @@ namespace Test.UiMaps.UiMapItems.Button
 {
     public class ListItemToButtonWhite : UiMapItemWhite, IButton
     {
-        private TestStack.White.UIItems.ListBoxItems.ListItem _listItem;
+        private readonly TestStack.White.UIItems.ListBoxItems.ListItem _listItem;
 
         public ListItemToButtonWhite(TestStack.White.UIItems.ListBoxItems.ListItem listItem)
             : base(listItem)

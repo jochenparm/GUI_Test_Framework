@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,9 @@ namespace Test.FunctionalLibrary
     public class Main : IMain
     {
         public Main()
-        {
-        }
+        { }
 
-        public void Maximize_Window()
+        private void Maximize_Window()
         {
             MailWasher.UiMap.MainWindow.MaximizeWindow_Button.Click();
         }
@@ -21,6 +21,7 @@ namespace Test.FunctionalLibrary
         IMain IMain.Maximize_Window()
         {
             this.Maximize_Window();
+            Log.Information("FunctionalLibrary.Main: Maximized Window");
             return this;
         }
 
@@ -32,6 +33,7 @@ namespace Test.FunctionalLibrary
         IMain IMain.Minimize_Window()
         {
             this.Minimize_Window();
+            Log.Information("FunctionalLibrary.Main: Minimized Window");
             return this;
         }
 
@@ -43,6 +45,7 @@ namespace Test.FunctionalLibrary
         IMain IMain.Close_Window()
         {
             this.Close_Window();
+            Log.Information("FunctionalLibrary.Main: Closed Window");
             return this;
         }
 

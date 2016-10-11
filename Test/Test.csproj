@@ -95,6 +95,7 @@
     <Compile Include="FunctionalLibrary\Menu\File\IFile.cs" />
     <Compile Include="FunctionalLibrary\Menu\IMenu.cs" />
     <Compile Include="FunctionalLibrary\Menu\Menu.cs" />
+    <Compile Include="FunctionalLibrary\Menu\View\IView.cs" />
     <Compile Include="FunctionalLibrary\Navigator\EventLog\EventLog.cs" />
     <Compile Include="FunctionalLibrary\Navigator\EventLog\IEventLog.cs" />
     <Compile Include="FunctionalLibrary\Navigator\INavigator.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="FunctionalLibrary\Navigator\Settings\Sync\Sync.cs" />
     <Compile Include="MailWasher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestSuite\FunctionalLevel\MainWindow\Functional_Test_MainWindow.cs" />
     <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\General\Tests_AccountsGeneralScreen.cs" />
     <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\IMAP\Tests_AccountsIMAP.cs" />
     <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Incoming\Tests_AccountsIncomingScreen.cs" />

@@ -2,7 +2,7 @@
 {
     internal class TextLabelWhite : UiMapItemWhite, ITextLabel
     {
-        private TestStack.White.UIItems.Label _label;
+        private readonly TestStack.White.UIItems.Label _label;
 
         public TextLabelWhite(TestStack.White.UIItems.Label label)
             : base(label)

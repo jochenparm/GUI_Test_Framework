@@ -4,7 +4,7 @@ namespace Test.UiMaps.UiMapItems.Button
 {
     public class LabelToButtonWhite : UiMapItemWhite, IButton
     {
-        private TestStack.White.UIItems.Label _label;
+        private readonly TestStack.White.UIItems.Label _label;
 
         public LabelToButtonWhite(TestStack.White.UIItems.Label label)
             : base(label)

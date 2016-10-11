@@ -2,7 +2,7 @@
 {
     public class CheckBoxWhite : UiMapItemWhite, ICheckBox
     {
-        private TestStack.White.UIItems.CheckBox _checkBox;
+        private readonly TestStack.White.UIItems.CheckBox _checkBox;
 
         public CheckBoxWhite(TestStack.White.UIItems.CheckBox checkBox)
             : base(checkBox)
@@ -20,7 +20,7 @@
 
         public void Enable()
         {
-            if (!this.IsEnabled)
+            if(!this.IsEnabled)
             {
                 this._checkBox.Checked = true;
             }
@@ -28,7 +28,7 @@
 
         public void Disable()
         {
-            if (this.IsEnabled)
+            if(this.IsEnabled)
             {
                 this._checkBox.Checked = false;
             }

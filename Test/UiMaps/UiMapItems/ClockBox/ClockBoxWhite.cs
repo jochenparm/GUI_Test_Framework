@@ -8,8 +8,8 @@ namespace Test.UiMaps.UiMapItems.ClockBox
 {
     public class ClockBoxWhite : IClockBox
     {
-        private TestStack.White.UIItems.TextBox _hoursTextBox;
-        private TestStack.White.UIItems.TextBox _minutesTextBox;
+        private readonly TestStack.White.UIItems.TextBox _hoursTextBox;
+        private readonly TestStack.White.UIItems.TextBox _minutesTextBox;
 
         public ClockBoxWhite(TestStack.White.UIItems.TextBox hours, TestStack.White.UIItems.TextBox minutes)
         {

@@ -8,7 +8,7 @@ namespace Test.UiMaps.UiMapItems.Slider
 {
     public class SliderWhite : UiMapItemWhite, ISlider
     {
-        private TestStack.White.UIItems.Slider _slider;
+        private readonly TestStack.White.UIItems.Slider _slider;
 
         public SliderWhite(TestStack.White.UIItems.Slider slider)
             : base(slider)

@@ -8,7 +8,7 @@ namespace Test.UiMaps.UiMapItems.DropDownMenu
 {
     public class DropDownMenuWhite : UiMapItemWhite, IDropDownMenu
     {
-        private TestStack.White.UIItems.ListBoxItems.ComboBox _comboBox;
+        private readonly TestStack.White.UIItems.ListBoxItems.ComboBox _comboBox;
 
         public DropDownMenuWhite(TestStack.White.UIItems.ListBoxItems.ComboBox comboBox)
             : base(comboBox)

@@ -8,7 +8,7 @@ namespace Test.UiMaps.UiMapItems.TextBox
 {
     public class TextBoxWhite : UiMapItemWhite, ITextBox
     {
-        private TestStack.White.UIItems.TextBox _textBox;
+        private readonly TestStack.White.UIItems.TextBox _textBox;
 
         public TextBoxWhite(TestStack.White.UIItems.TextBox textBox)
             : base(textBox)

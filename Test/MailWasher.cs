@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Test.FunctionalLibrary;
 using Test.FunctionalLibrary.Navigator;
 using Test.UiMaps;
 using TestStack.White;
@@ -48,6 +49,14 @@ namespace Test
             get
             {
                 return new Navigator();
+            }
+        }
+
+        public static IMain Main
+        {
+            get
+            {
+                return new Main();
             }
         }
     }

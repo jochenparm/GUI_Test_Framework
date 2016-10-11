@@ -8,7 +8,7 @@ namespace Test.UiMaps.UiMapItems.RadioButton
 {
     public class RadioButtonWhite : UiMapItemWhite, IRadioButton
     {
-        private TestStack.White.UIItems.RadioButton _radioButton;
+        private readonly TestStack.White.UIItems.RadioButton _radioButton;
 
         public RadioButtonWhite(TestStack.White.UIItems.RadioButton radioButton)
             : base(radioButton)

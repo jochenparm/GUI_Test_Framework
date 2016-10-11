@@ -4,7 +4,7 @@ namespace Test.UiMaps.UiMapItems.Button
 {
     public class MenuItemToButtonWhite : UiMapItemWhite, IButton
     {
-        private TestStack.White.UIItems.MenuItems.Menu _menuItem;
+        private readonly TestStack.White.UIItems.MenuItems.Menu _menuItem;
 
         public MenuItemToButtonWhite(TestStack.White.UIItems.MenuItems.Menu menuItem)
             : base(menuItem)
