@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.Button;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -98,10 +99,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
 
 #pragma warning restore 0649
 
-        /// <summary>
-        /// "Add Sender To Friends List" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Add_Sender_To_Friends_List_Button
+        private UiMapItems.Button.IButton Add_Sender_To_Friends_List_Button
         {
             get
             {
@@ -109,10 +107,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Add Domain To Friends List" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Add_Domain_To_Friends_List_Button
+        private UiMapItems.Button.IButton Add_Domain_To_Friends_List_Button
         {
             get
             {
@@ -120,10 +115,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Remove Sender From Friends List" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Remove_Sender_From_Friends_List_Button
+        private UiMapItems.Button.IButton Remove_Sender_From_Friends_List_Button
         {
             get
             {
@@ -131,10 +123,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Add Sender To Blacklist" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Add_Sender_To_Blacklist_Button
+        private UiMapItems.Button.IButton Add_Sender_To_Blacklist_Button
         {
             get
             {
@@ -142,10 +131,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Add Domain To Blacklist" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Add_Domain_To_Blacklist_Button
+        private UiMapItems.Button.IButton Add_Domain_To_Blacklist_Button
         {
             get
             {
@@ -153,10 +139,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Remove Sender From Blacklist" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Remove_Sender_From_Blacklist_Button
+        private UiMapItems.Button.IButton Remove_Sender_From_Blacklist_Button
         {
             get
             {
@@ -164,10 +147,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Mark As Spam" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Mark_As_Spam_Button
+        private UiMapItems.Button.IButton Mark_As_Spam_Button
         {
             get
             {
@@ -175,10 +155,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Mark As Good" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Mark_As_Good_Button
+        private UiMapItems.Button.IButton Mark_As_Good_Button
         {
             get
             {
@@ -186,10 +163,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Mark For Delete" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Mark_For_Delete_Button
+        private UiMapItems.Button.IButton Mark_For_Delete_Button
         {
             get
             {
@@ -197,10 +171,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Unmark Delete" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Unmark_Delete_Button
+        private UiMapItems.Button.IButton Unmark_Delete_Button
         {
             get
             {
@@ -208,10 +179,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Mark All For Delete" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Mark_All_For_Delete_Button
+        private UiMapItems.Button.IButton Mark_All_For_Delete_Button
         {
             get
             {
@@ -219,10 +187,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Mark For Bounce" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Mark_For_Bounce_Button
+        private UiMapItems.Button.IButton Mark_For_Bounce_Button
         {
             get
             {
@@ -230,10 +195,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Quick Reply..." UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Quick_Reply_Button
+        private UiMapItems.Button.IButton Quick_Reply_Button
         {
             get
             {
@@ -241,10 +203,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Quick Forward..." UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Quick_Forward_Button
+        private UiMapItems.Button.IButton Quick_Forward_Button
         {
             get
             {
@@ -252,10 +211,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Download Full" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Download_Full_Button
+        private UiMapItems.Button.IButton Download_Full_Button
         {
             get
             {
@@ -263,14 +219,187 @@ namespace Test.UiMaps.MainWindow.Menu.Email
             }
         }
 
-        /// <summary>
-        /// "Clear Message List" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Clear_Message_List_Button
+        private UiMapItems.Button.IButton Clear_Message_List_Button
         {
             get
             {
                 return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmClearGrid);
+            }
+        }
+
+        /// <summary>
+        /// "Add Sender To Friends List" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Add_Sender_To_Friends_List_Button
+        {
+            get
+            {
+                return this.Add_Sender_To_Friends_List_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Add Domain To Friends List" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Add_Domain_To_Friends_List_Button
+        {
+            get
+            {
+                return this.Add_Domain_To_Friends_List_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Remove Sender From Friends List" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Remove_Sender_From_Friends_List_Button
+        {
+            get
+            {
+                return this.Remove_Sender_From_Friends_List_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Add Sender To Blacklist" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Add_Sender_To_Blacklist_Button
+        {
+            get
+            {
+                return this.Add_Sender_To_Blacklist_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Add Domain To Blacklist" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Add_Domain_To_Blacklist_Button
+        {
+            get
+            {
+                return this.Add_Domain_To_Blacklist_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Remove Sender From Blacklist" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Remove_Sender_From_Blacklist_Button
+        {
+            get
+            {
+                return this.Remove_Sender_From_Blacklist_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Mark As Spam" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Mark_As_Spam_Button
+        {
+            get
+            {
+                return this.Mark_As_Spam_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Mark As Good" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Mark_As_Good_Button
+        {
+            get
+            {
+                return this.Mark_As_Good_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Mark For Delete" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Mark_For_Delete_Button
+        {
+            get
+            {
+                return this.Mark_For_Delete_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Unmark Delete" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Unmark_Delete_Button
+        {
+            get
+            {
+                return this.Unmark_Delete_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Mark All For Delete" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Mark_All_For_Delete_Button
+        {
+            get
+            {
+                return this.Mark_All_For_Delete_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Mark For Bounce" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Mark_For_Bounce_Button
+        {
+            get
+            {
+                return this.Mark_For_Bounce_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Quick Reply..." UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Quick_Reply_Button
+        {
+            get
+            {
+                return this.Quick_Reply_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Quick Forward..." UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Quick_Forward_Button
+        {
+            get
+            {
+                return this.Quick_Forward_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Download Full" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Download_Full_Button
+        {
+            get
+            {
+                return this.Download_Full_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Clear Message List" UiMapItems Button
+        /// </summary>
+        IButton IEmailMenuScreen.Clear_Message_List_Button
+        {
+            get
+            {
+                return this.Clear_Message_List_Button;
             }
         }
     }

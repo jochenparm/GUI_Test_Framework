@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.FunctionalLibrary.Menu;
 using Test.FunctionalLibrary.Navigator;
 
 namespace Test.FunctionalLibrary
@@ -49,19 +50,19 @@ namespace Test.FunctionalLibrary
             return this;
         }
 
-        private INavigator Navigator
+        private IMenu Menu
         {
             get
             {
-                return new Navigator.Navigator();
+                return new Menu.Menu();
             }
         }
 
-        Navigator.INavigator IMain.Navigator
+        IMenu IMain.Menu
         {
             get
             {
-                return this.Navigator;
+                return this.Menu;
             }
         }
     }

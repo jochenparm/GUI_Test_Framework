@@ -15,7 +15,7 @@ namespace Test.TestSuite.UiMapLevel.Settings.General.Notifications
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.Navigator.Settings.General.Notifications.Navigate();
+            MailWasher.Navigator.Tabs.Settings.General.Notifications.Navigate();
         }
 
         [Test]

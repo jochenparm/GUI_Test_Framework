@@ -15,7 +15,7 @@ namespace Test.TestSuite.UiMapLevel.Settings.RecycleBin.General
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.Navigator.Settings.RecycleBin.General.Navigate();
+            MailWasher.Navigator.Tabs.Settings.RecycleBin.General.Navigate();
         }
 
         [Test]

@@ -15,7 +15,7 @@ namespace Test.TestSuite.UiMapLevel.Settings.General.CheckingMail
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.Navigator.Settings.General.Checking_Mail.Navigate();
+            MailWasher.Navigator.Tabs.Settings.General.Checking_Mail.Navigate();
         }
 
         [Test]

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.FunctionalLibrary.Navigator.Menu;
+using Test.FunctionalLibrary.Navigator.Tabs;
 
 namespace Test.FunctionalLibrary.Navigator
 {
@@ -12,67 +14,35 @@ namespace Test.FunctionalLibrary.Navigator
         {
         }
 
-        private Inbox.IInbox Inbox
+        private IMenu Menu
         {
             get
             {
-                return new Inbox.Inbox();
+                return new Menu.Menu();
             }
         }
 
-        Inbox.IInbox INavigator.Inbox
+        IMenu INavigator.Menu
         {
             get
             {
-                return this.Inbox;
+                return this.Menu;
             }
         }
 
-        private RecycleBin.IRecycleBin RecycleBin
+        private ITabs Tabs
         {
             get
             {
-                return new RecycleBin.RecycleBin();
+                return new Tabs.Tabs();
             }
         }
 
-        RecycleBin.IRecycleBin INavigator.RecycleBin
+        ITabs INavigator.Tabs
         {
             get
             {
-                return this.RecycleBin;
-            }
-        }
-
-        private Settings.ISettings Settings
-        {
-            get
-            {
-                return new Settings.Settings();
-            }
-        }
-
-        Settings.ISettings INavigator.Settings
-        {
-            get
-            {
-                return this.Settings;
-            }
-        }
-
-        private EventLog.IEventLog EventLog
-        {
-            get
-            {
-                return new EventLog.EventLog();
-            }
-        }
-
-        EventLog.IEventLog INavigator.EventLog
-        {
-            get
-            {
-                return this.EventLog;
+                return this.Tabs;
             }
         }
     }

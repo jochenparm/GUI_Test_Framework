@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Test.FunctionalLibrary.Menu.File;
+using Test.FunctionalLibrary.Menu.View;
 
 namespace Test.FunctionalLibrary.Menu
 {
@@ -26,6 +27,22 @@ namespace Test.FunctionalLibrary.Menu
             get
             {
                 return this.File;
+            }
+        }
+
+        private IView View
+        {
+            get
+            {
+                return new View.View();
+            }
+        }
+
+        IView IMenu.View
+        {
+            get
+            {
+                return this.View;
             }
         }
     }

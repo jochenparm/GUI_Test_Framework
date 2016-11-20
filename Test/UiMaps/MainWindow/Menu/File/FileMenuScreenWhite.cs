@@ -1,4 +1,6 @@
-﻿using TestStack.White.ScreenObjects;
+﻿using System;
+using Test.UiMaps.UiMapItems.Button;
+using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
 namespace Test.UiMaps.MainWindow.Menu.File
@@ -18,7 +20,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
         private TestStack.White.UIItems.MenuItems.Menu MnuItmExit;            //MnuItmExit = Menu Item "Exit"
 #pragma warning restore 0649
 
-        public UiMapItems.Button.IButton CheckMail_Button
+        private UiMapItems.Button.IButton CheckMail_Button
         {
             get
             {
@@ -26,7 +28,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        public UiMapItems.Button.IButton WashMail_Button
+        private UiMapItems.Button.IButton WashMail_Button
         {
             get
             {
@@ -34,7 +36,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        public UiMapItems.Button.IButton MailProgram_Button
+        private UiMapItems.Button.IButton MailProgram_Button
         {
             get
             {
@@ -42,7 +44,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        public UiMapItems.Button.IButton Import_Button
+        private UiMapItems.Button.IButton Import_Button
         {
             get
             {
@@ -50,7 +52,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        public UiMapItems.Button.IButton Export_Button
+        private UiMapItems.Button.IButton Export_Button
         {
             get
             {
@@ -58,11 +60,59 @@ namespace Test.UiMaps.MainWindow.Menu.File
             }
         }
 
-        public UiMapItems.Button.IButton Exit_Button
+        private UiMapItems.Button.IButton Exit_Button
         {
             get
             {
                 return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmExit);
+            }
+        }
+
+        IButton IFileMenuScreen.CheckMail_Button
+        {
+            get
+            {
+                return this.CheckMail_Button;
+            }
+        }
+
+        IButton IFileMenuScreen.WashMail_Button
+        {
+            get
+            {
+                return this.WashMail_Button;
+            }
+        }
+
+        IButton IFileMenuScreen.MailProgram_Button
+        {
+            get
+            {
+                return this.MailProgram_Button;
+            }
+        }
+
+        IButton IFileMenuScreen.Import_Button
+        {
+            get
+            {
+                return this.Import_Button;
+            }
+        }
+
+        IButton IFileMenuScreen.Export_Button
+        {
+            get
+            {
+                return this.Export_Button;
+            }
+        }
+
+        IButton IFileMenuScreen.Exit_Button
+        {
+            get
+            {
+                return this.Exit_Button;
             }
         }
     }

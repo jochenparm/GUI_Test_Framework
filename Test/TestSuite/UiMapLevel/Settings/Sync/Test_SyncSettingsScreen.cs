@@ -11,7 +11,7 @@ namespace Test.TestSuite.UiMapLevel.Settings.Sync
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.Navigator.Settings.Sync.Navigate();
+            MailWasher.Navigator.Tabs.Settings.Sync.Navigate();
         }
 
         [Test]

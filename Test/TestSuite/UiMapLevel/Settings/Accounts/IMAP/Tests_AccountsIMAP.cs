@@ -5,36 +5,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.TestSuite.UiMapLevel.Strategies.Verification;
 using Test.UiMaps;
 
 namespace Test.TestSuite.UiMapLevel.Settings.Accounts.IMAP
 {
-    [TestFixture, Property("UiMap", "Accounts_Settings_IMAP_UIITems")]
-    public class Tests_AccountsIMAP
+    [TestFixture, Property("UiMap_Accounts_Settings_IMAP", "Refresh_Button")]
+    public class Tests_AccountsGeneralScreen_Refresh_Button : Button_Verification
     {
-        [SetUp]
-        public void SetUp()
-        {
-            MailWasher.Init();
-            MailWasher.Navigator.Settings.Accounts.IMAP.Navigate();
-        }
+        public Tests_AccountsGeneralScreen_Refresh_Button()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.IMAP.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.IMAP.Refresh_Button)
+        { }
+    }
 
-        [Test]
-        public void Verify_Refresh_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.IMAP.Refresh_Button.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_Save_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.IMAP.Save_Button.IsOnScreen.ShouldBeTrue();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            MailWasher.DeInit();
-        }
+    [TestFixture, Property("UiMap_Accounts_Settings_IMAP", "Save_Button")]
+    public class Tests_AccountsGeneralScreen_Save_Button : Button_Verification
+    {
+        public Tests_AccountsGeneralScreen_Save_Button()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.IMAP.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.IMAP.Save_Button)
+        { }
     }
 }

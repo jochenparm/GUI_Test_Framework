@@ -16,7 +16,7 @@ namespace Test.TestSuite.UiMapLevel.Settings.Accounts.Outgoing
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.Navigator.Settings.Accounts.Outgoing.Navigate();
+            MailWasher.Navigator.Tabs.Settings.Accounts.Outgoing.Navigate();
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace Test.TestSuite.UiMapLevel.Settings.Accounts.Outgoing
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.Navigator.Settings.Accounts.Outgoing.Advanced.Navigate();
+            MailWasher.Navigator.Tabs.Settings.Accounts.Outgoing.Advanced.Navigate();
         }
 
         [Test]

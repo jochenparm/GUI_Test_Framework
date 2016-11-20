@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.FunctionalLibrary.Menu;
 using Test.FunctionalLibrary.Navigator;
 
 namespace Test.FunctionalLibrary
@@ -15,6 +16,6 @@ namespace Test.FunctionalLibrary
 
         IMain Close_Window();
 
-        INavigator Navigator { get; }
+        IMenu Menu { get; }
     }
 }

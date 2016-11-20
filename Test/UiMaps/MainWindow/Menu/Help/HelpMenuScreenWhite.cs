@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.Button;
+using Test.UiMaps.UiMapItems.CheckBox;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -68,10 +70,7 @@ namespace Test.UiMaps.MainWindow.Menu.Help
 
 #pragma warning restore 0649
 
-        /// <summary>
-        /// "Help Topics..." TestStack White MenuItem
-        /// </summary>
-        public UiMapItems.Button.IButton Help_Topics_Button
+        private UiMapItems.Button.IButton Help_Topics_Button
         {
             get
             {
@@ -79,10 +78,7 @@ namespace Test.UiMaps.MainWindow.Menu.Help
             }
         }
 
-        /// <summary>
-        /// "Forums..." UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Forums_Button
+        private UiMapItems.Button.IButton Forums_Button
         {
             get
             {
@@ -90,10 +86,7 @@ namespace Test.UiMaps.MainWindow.Menu.Help
             }
         }
 
-        /// <summary>
-        /// "Tell a Friend..." UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Tell_A_Friend_Button
+        private UiMapItems.Button.IButton Tell_A_Friend_Button
         {
             get
             {
@@ -101,10 +94,7 @@ namespace Test.UiMaps.MainWindow.Menu.Help
             }
         }
 
-        /// <summary>
-        /// "Registration..." UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Registration_Button
+        private UiMapItems.Button.IButton Registration_Button
         {
             get
             {
@@ -112,10 +102,7 @@ namespace Test.UiMaps.MainWindow.Menu.Help
             }
         }
 
-        /// <summary>
-        /// "User Files..." UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton User_Files_Button
+        private UiMapItems.Button.IButton User_Files_Button
         {
             get
             {
@@ -123,10 +110,7 @@ namespace Test.UiMaps.MainWindow.Menu.Help
             }
         }
 
-        /// <summary>
-        /// "Common Files..." UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Common_Files_Button
+        private UiMapItems.Button.IButton Common_Files_Button
         {
             get
             {
@@ -134,21 +118,15 @@ namespace Test.UiMaps.MainWindow.Menu.Help
             }
         }
 
-        /// <summary>
-        /// "Log Protocol" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Log_Protocol_Button
+        private UiMapItems.CheckBox.ICheckBox Log_Protocol_CheckBox
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmLogProtocol);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmLogProtocol);
             }
         }
 
-        /// <summary>
-        /// "Send Support Logs" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Send_Support_Logs_Button
+        private UiMapItems.Button.IButton Send_Support_Logs_Button
         {
             get
             {
@@ -156,10 +134,7 @@ namespace Test.UiMaps.MainWindow.Menu.Help
             }
         }
 
-        /// <summary>
-        /// "Check for Updates..." UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton Check_For_Updates_Button
+        private UiMapItems.Button.IButton Check_For_Updates_Button
         {
             get
             {
@@ -167,14 +142,121 @@ namespace Test.UiMaps.MainWindow.Menu.Help
             }
         }
 
-        /// <summary>
-        /// "About" UiMapItems Button
-        /// </summary>
-        public UiMapItems.Button.IButton About_Button
+        private UiMapItems.Button.IButton About_Button
         {
             get
             {
                 return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAbout);
+            }
+        }
+
+        /// <summary>
+        /// "Help Topics..." TestStack White MenuItem
+        /// </summary>
+        IButton IHelpMenuScreen.Help_Topics_Button
+        {
+            get
+            {
+                return this.Help_Topics_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Forums..." UiMapItems Button
+        /// </summary>
+        IButton IHelpMenuScreen.Forums_Button
+        {
+            get
+            {
+                return this.Forums_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Tell a Friend..." UiMapItems Button
+        /// </summary>
+        IButton IHelpMenuScreen.Tell_A_Friend_Button
+        {
+            get
+            {
+                return this.Tell_A_Friend_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Registration..." UiMapItems Button
+        /// </summary>
+        IButton IHelpMenuScreen.Registration_Button
+        {
+            get
+            {
+                return this.Registration_Button;
+            }
+        }
+
+        /// <summary>
+        /// "User Files..." UiMapItems Button
+        /// </summary>
+        IButton IHelpMenuScreen.User_Files_Button
+        {
+            get
+            {
+                return this.User_Files_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Common Files..." UiMapItems Button
+        /// </summary>
+        IButton IHelpMenuScreen.Common_Files_Button
+        {
+            get
+            {
+                return this.Common_Files_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Log Protocol" UiMapItems CheckBox
+        /// </summary>
+        ICheckBox IHelpMenuScreen.Log_Protocol_CheckBox
+        {
+            get
+            {
+                return this.Log_Protocol_CheckBox;
+            }
+        }
+
+        /// <summary>
+        /// "Send Support Logs" UiMapItems Button
+        /// </summary>
+        IButton IHelpMenuScreen.Send_Support_Logs_Button
+        {
+            get
+            {
+                return this.Send_Support_Logs_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Check for Updates..." UiMapItems Button
+        /// </summary>
+        IButton IHelpMenuScreen.Check_For_Updates_Button
+        {
+            get
+            {
+                return this.Check_For_Updates_Button;
+            }
+        }
+
+        /// <summary>
+        /// "About" UiMapItems Button
+        /// </summary>
+        IButton IHelpMenuScreen.About_Button
+        {
+            get
+            {
+                return this.About_Button;
             }
         }
     }

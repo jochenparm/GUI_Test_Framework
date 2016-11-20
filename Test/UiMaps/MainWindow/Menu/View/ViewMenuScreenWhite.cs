@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.Button;
+using Test.UiMaps.UiMapItems.CheckBox;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -48,54 +50,39 @@ namespace Test.UiMaps.MainWindow.Menu.View
 
 #pragma warning restore 0649
 
-        /// <summary>
-        /// "Preview Pane" UiMapItem Button
-        /// </summary>
-        public UiMapItems.Button.IButton Preview_Pane_Button
+        private UiMapItems.CheckBox.ICheckBox Preview_Pane_CheckBox
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmPreviewPane);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmPreviewPane);
             }
         }
 
-        /// <summary>
-        /// "Preview Pane Graphic" UiMapItem Button
-        /// </summary>
-        public UiMapItems.Button.IButton Preview_Pane_Graphic_Button
+        private UiMapItems.CheckBox.ICheckBox Preview_Pane_Graphic_CheckBox
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmPreviewSplash);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmPreviewSplash);
             }
         }
 
-        /// <summary>
-        /// "Side Bar" UiMapItem Button
-        /// </summary>
-        public UiMapItems.Button.IButton Side_Bar_Button
+        private UiMapItems.CheckBox.ICheckBox Side_Bar_CheckBox
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmSideBar);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmSideBar);
             }
         }
 
-        /// <summary>
-        /// "Always Show Event Log" UiMapItem Button
-        /// </summary>
-        public UiMapItems.Button.IButton Always_Show_Event_Log_Button
+        private UiMapItems.CheckBox.ICheckBox Always_Show_Event_Log_CheckBox
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmEventLog);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmEventLog);
             }
         }
 
-        /// <summary>
-        /// "Tutorial Video" UiMapItem Button
-        /// </summary>
-        public UiMapItems.Button.IButton Tutorial_Video_Button
+        private UiMapItems.Button.IButton Tutorial_Video_Button
         {
             get
             {
@@ -103,14 +90,77 @@ namespace Test.UiMaps.MainWindow.Menu.View
             }
         }
 
-        /// <summary>
-        /// "Show hidden emails" UiMapItem Button
-        /// </summary>
-        public UiMapItems.Button.IButton Show_Hidden_Emails_Button
+        private UiMapItems.CheckBox.ICheckBox Show_Hidden_Emails_CheckBox
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmShowHiddenEmails);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmShowHiddenEmails);
+            }
+        }
+
+        /// <summary>
+        /// "Preview Pane" UiMapItem CheckBox
+        /// </summary>
+        ICheckBox IViewMenuScreen.Preview_Pane_CheckBox
+        {
+            get
+            {
+                return this.Preview_Pane_CheckBox;
+            }
+        }
+
+        /// <summary>
+        /// "Preview Pane Graphic" UiMapItem CheckBox
+        /// </summary>
+        ICheckBox IViewMenuScreen.Preview_Pane_Graphic_CheckBox
+        {
+            get
+            {
+                return this.Preview_Pane_Graphic_CheckBox;
+            }
+        }
+
+        /// <summary>
+        /// "Side Bar" UiMapItem CheckBox
+        /// </summary>
+        ICheckBox IViewMenuScreen.Side_Bar_CheckBox
+        {
+            get
+            {
+                return this.Side_Bar_CheckBox;
+            }
+        }
+
+        /// <summary>
+        /// "Always Show Event Log" UiMapItem CheckBox
+        /// </summary>
+        ICheckBox IViewMenuScreen.Always_Show_Event_Log_CheckBox
+        {
+            get
+            {
+                return this.Always_Show_Event_Log_CheckBox;
+            }
+        }
+
+        /// <summary>
+        /// "Tutorial Video" UiMapItem Button
+        /// </summary>
+        IButton IViewMenuScreen.Tutorial_Video_Button
+        {
+            get
+            {
+                return this.Tutorial_Video_Button;
+            }
+        }
+
+        /// <summary>
+        /// "Show hidden emails" UiMapItem CheckBox
+        /// </summary>
+        ICheckBox IViewMenuScreen.Show_Hidden_Emails_CheckBox
+        {
+            get
+            {
+                return this.Show_Hidden_Emails_CheckBox;
             }
         }
     }

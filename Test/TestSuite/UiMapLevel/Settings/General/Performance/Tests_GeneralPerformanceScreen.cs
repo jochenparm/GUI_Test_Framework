@@ -15,7 +15,7 @@ namespace Test.TestSuite.UiMapLevel.Settings.General.Performance
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.Navigator.Settings.General.Performance.Navigate();
+            MailWasher.Navigator.Tabs.Settings.General.Performance.Navigate();
         }
 
         [Test]

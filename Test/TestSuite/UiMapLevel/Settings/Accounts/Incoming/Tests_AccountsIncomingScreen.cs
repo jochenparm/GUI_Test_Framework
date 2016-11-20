@@ -4,126 +4,127 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Test.TestSuite.UiMapLevel.Strategies.Verification;
 using Test.UiMaps;
 
 namespace Test.TestSuite.UiMapLevel.Settings.Accounts.Incoming
 {
-    [TestFixture, Property("UiMap", "Accounts_Settings_Incoming_UIITems")]
-    public class Tests_AccountsIncomingScreen_Basic_Settings
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Advanced_Button")]
+    public class Tests_AccountsIncomingScreen_Advanced_Button : Button_Verification
     {
-        [SetUp]
-        public void SetUp()
-        {
-            MailWasher.Init();
-            MailWasher.Navigator.Settings.Accounts.Incoming.Navigate();
-        }
-
-        [Test]
-        public void Verify_Server_Type_DropDownMenu_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Server_Type_DropDownMenu.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_Server_Address_TextBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Server_Address_TextBox.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_User_Name_TextBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.User_Name_TextBox.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_Password_TextBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Password_TextBox.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_Remember_Password_CheckBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Remember_Password_CheckBox.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_Store_Cached_Emails_CheckBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Store_Cached_Emails_CheckBox.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_Advanced_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Advanced_Button.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_Save_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Save_Button.IsOnScreen.ShouldBeTrue();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            MailWasher.DeInit();
-        }
+        public Tests_AccountsIncomingScreen_Advanced_Button()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Advanced_Button)
+        { }
     }
 
-    [TestFixture, Property("UiMap", "Accounts_Settings_Incoming_UIITems")]
-    public class Tests_AccountsIncomingScreen_Advanced_Settings
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Save_Button")]
+    public class Tests_AccountsIncomingScreen_Save_Button : Button_Verification
     {
-        [SetUp]
-        public void SetUp()
-        {
-            MailWasher.Init();
-            MailWasher.Navigator.Settings.Accounts.Incoming.Advanced.Navigate();
-        }
+        public Tests_AccountsIncomingScreen_Save_Button()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Save_Button)
+        { }
+    }
 
-        [Test]
-        public void Verify_Server_Port_Number_TextBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Server_Port_Number_TextBox.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Server_Address_TextBox")]
+    public class Tests_AccountsIncomingScreen_Server_Address_TextBox : TextBox_Verification
+    {
+        public Tests_AccountsIncomingScreen_Server_Address_TextBox()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Server_Address_TextBox)
+        { }
+    }
 
-        [Test]
-        public void Verify_Store_Cached_Emails_CheckBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Store_Cached_Emails_CheckBox.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "User_Name_TextBox")]
+    public class Tests_AccountsIncomingScreen_User_Name_TextBox : TextBox_Verification
+    {
+        public Tests_AccountsIncomingScreen_User_Name_TextBox()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.User_Name_TextBox)
+        { }
+    }
 
-        [Test]
-        public void Verify_Use_OAUTH_CheckBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Use_OAUTH_CheckBox.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Password_TextBox")]
+    public class Tests_AccountsIncomingScreen_Password_TextBox : TextBox_Verification
+    {
+        public Tests_AccountsIncomingScreen_Password_TextBox()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Password_TextBox)
+        { }
+    }
 
-        [Test]
-        public void Verify_Download_Read_Emails_CheckBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Download_Read_Emails_CheckBox.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Server_Port_Number_TextBox")]
+    public class Tests_AccountsIncomingScreen_ServerPortNumber_TextBox : TextBox_Verification
+    {
+        public Tests_AccountsIncomingScreen_ServerPortNumber_TextBox()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Server_Port_Number_TextBox)
+        { }
+    }
 
-        [Test]
-        public void Verify_Move_Deleted_Messages_Into_Folder_CheckBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Move_Deleted_Messages_Into_Folder_CheckBox.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Remember_Password_CheckBox")]
+    public class Tests_AccountsIncomingScreen_RememberPassword_CheckBox : CheckBox_Verification
+    {
+        public Tests_AccountsIncomingScreen_RememberPassword_CheckBox()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Remember_Password_CheckBox)
+        { }
+    }
 
-        [Test]
-        public void Verify_Destination_Folder_DropDownMenu_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Destination_Folder_DropDownMenu.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Remember_Password_CheckBox")]
+    public class Tests_AccountsIncomingScreen_StoreCachedEmails_CheckBox : CheckBox_Verification
+    {
+        public Tests_AccountsIncomingScreen_StoreCachedEmails_CheckBox()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Store_Cached_Emails_CheckBox)
+        { }
+    }
 
-        [TearDown]
-        public void TearDown()
-        {
-            MailWasher.DeInit();
-        }
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Use_OAUTH_CheckBox")]
+    public class Tests_AccountsIncomingScreen_UseOAUTH_CheckBox : CheckBox_Verification
+    {
+        public Tests_AccountsIncomingScreen_UseOAUTH_CheckBox()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Use_OAUTH_CheckBox)
+        { }
+    }
+
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Download_Read_Emails_CheckBox")]
+    public class Tests_AccountsIncomingScreen_DownloadReadEmails_CheckBox : CheckBox_Verification
+    {
+        public Tests_AccountsIncomingScreen_DownloadReadEmails_CheckBox()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Download_Read_Emails_CheckBox)
+        { }
+    }
+
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Move_Deleted_Messages_Into_Folder_CheckBox")]
+    public class Tests_AccountsIncomingScreen_MoveDeletedMessagesIntoFolder_CheckBox : CheckBox_Verification
+    {
+        public Tests_AccountsIncomingScreen_MoveDeletedMessagesIntoFolder_CheckBox()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Move_Deleted_Messages_Into_Folder_CheckBox)
+        { }
+    }
+
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Destination_Folder_DropDownMenu")]
+    public class Tests_AccountsIncomingScreen_DestinationFolder_DropDownMenu : DropDownMenu_Verification
+    {
+        public Tests_AccountsIncomingScreen_DestinationFolder_DropDownMenu()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Destination_Folder_DropDownMenu)
+        { }
+    }
+
+    [TestFixture, Property("UiMap_Accounts_Settings_Incoming", "Server_Type_DropDownMenu")]
+    public class Tests_AccountsIncomingScreen_ServerType_DropDownMenu : DropDownMenu_Verification
+    {
+        public Tests_AccountsIncomingScreen_ServerType_DropDownMenu()
+            : base(() => MailWasher.Navigator.Tabs.Settings.Accounts.Incoming.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.Incoming.Server_Type_DropDownMenu)
+        { }
     }
 }

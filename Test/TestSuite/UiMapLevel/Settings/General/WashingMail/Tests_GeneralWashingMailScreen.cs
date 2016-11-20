@@ -15,7 +15,7 @@ namespace Test.TestSuite.UiMapLevel.Settings.General.WashingMail
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.Navigator.Settings.General.Washing_Mail.Navigate();
+            MailWasher.Navigator.Tabs.Settings.General.Washing_Mail.Navigate();
         }
 
         [Test]

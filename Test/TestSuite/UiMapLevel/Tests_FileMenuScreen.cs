@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Shouldly;
+using Test.TestSuite.UiMapLevel.Strategies.Verification;
 using Test.UiMaps;
 
 namespace Test.TestSuite.UiMapLevel
@@ -11,7 +12,7 @@ namespace Test.TestSuite.UiMapLevel
         public void SetUp()
         {
             MailWasher.Init();
-            MailWasher.UiMap.MainWindow.Menu.File_Button.Click();
+            MailWasher.Navigator.Menu.File.Navigate();
         }
 
         [Test]

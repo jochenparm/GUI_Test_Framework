@@ -8,11 +8,11 @@ namespace Test.UiMaps.MainWindow.Menu.View
 {
     public interface IViewMenuScreen
     {
-        UiMapItems.Button.IButton Preview_Pane_Button { get; }
-        UiMapItems.Button.IButton Preview_Pane_Graphic_Button { get; }
-        UiMapItems.Button.IButton Side_Bar_Button { get; }
-        UiMapItems.Button.IButton Always_Show_Event_Log_Button { get; }
+        UiMapItems.CheckBox.ICheckBox Preview_Pane_CheckBox { get; }
+        UiMapItems.CheckBox.ICheckBox Preview_Pane_Graphic_CheckBox { get; }
+        UiMapItems.CheckBox.ICheckBox Side_Bar_CheckBox { get; }
+        UiMapItems.CheckBox.ICheckBox Always_Show_Event_Log_CheckBox { get; }
         UiMapItems.Button.IButton Tutorial_Video_Button { get; }
-        UiMapItems.Button.IButton Show_Hidden_Emails_Button { get; }
+        UiMapItems.CheckBox.ICheckBox Show_Hidden_Emails_CheckBox { get; }
     }
 }

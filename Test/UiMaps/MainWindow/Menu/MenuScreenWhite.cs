@@ -1,8 +1,10 @@
-﻿using Test.UiMaps.MainWindow.Menu.Email;
+﻿using System;
+using Test.UiMaps.MainWindow.Menu.Email;
 using Test.UiMaps.MainWindow.Menu.Factory;
 using Test.UiMaps.MainWindow.Menu.File;
 using Test.UiMaps.MainWindow.Menu.Help;
 using Test.UiMaps.MainWindow.Menu.View;
+using Test.UiMaps.UiMapItems.Button;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -25,15 +27,7 @@ namespace Test.UiMaps.MainWindow.Menu
             this._menuFactory = new MenuFactoryWhite(screenRepository);
         }
 
-        public UiMapItems.Button.IButton File_Button
-        {
-            get
-            {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmFile);
-            }
-        }
-
-        public IFileMenuScreen File
+        private IFileMenuScreen File
         {
             get
             {
@@ -41,7 +35,7 @@ namespace Test.UiMaps.MainWindow.Menu
             }
         }
 
-        public IEmailMenuScreen Email
+        private IEmailMenuScreen Email
         {
             get
             {
@@ -49,7 +43,7 @@ namespace Test.UiMaps.MainWindow.Menu
             }
         }
 
-        public IHelpMenuScreen Help
+        private IHelpMenuScreen Help
         {
             get
             {
@@ -57,7 +51,7 @@ namespace Test.UiMaps.MainWindow.Menu
             }
         }
 
-        public IViewMenuScreen View
+        private IViewMenuScreen View
         {
             get
             {
@@ -65,7 +59,15 @@ namespace Test.UiMaps.MainWindow.Menu
             }
         }
 
-        public UiMapItems.Button.IButton Email_Button
+        private UiMapItems.Button.IButton File_Button
+        {
+            get
+            {
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmFile);
+            }
+        }
+
+        private UiMapItems.Button.IButton Email_Button
         {
             get
             {
@@ -73,7 +75,7 @@ namespace Test.UiMaps.MainWindow.Menu
             }
         }
 
-        public UiMapItems.Button.IButton Help_Button
+        private UiMapItems.Button.IButton Help_Button
         {
             get
             {
@@ -81,11 +83,75 @@ namespace Test.UiMaps.MainWindow.Menu
             }
         }
 
-        public UiMapItems.Button.IButton View_Button
+        private UiMapItems.Button.IButton View_Button
         {
             get
             {
                 return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmView);
+            }
+        }
+
+        IFileMenuScreen IMenuScreen.File
+        {
+            get
+            {
+                return this.File;
+            }
+        }
+
+        IEmailMenuScreen IMenuScreen.Email
+        {
+            get
+            {
+                return this.Email;
+            }
+        }
+
+        IHelpMenuScreen IMenuScreen.Help
+        {
+            get
+            {
+                return this.Help;
+            }
+        }
+
+        IViewMenuScreen IMenuScreen.View
+        {
+            get
+            {
+                return this.View;
+            }
+        }
+
+        IButton IMenuScreen.File_Button
+        {
+            get
+            {
+                return this.File_Button;
+            }
+        }
+
+        IButton IMenuScreen.Email_Button
+        {
+            get
+            {
+                return this.Email_Button;
+            }
+        }
+
+        IButton IMenuScreen.Help_Button
+        {
+            get
+            {
+                return this.Help_Button;
+            }
+        }
+
+        IButton IMenuScreen.View_Button
+        {
+            get
+            {
+                return this.View_Button;
             }
         }
     }
