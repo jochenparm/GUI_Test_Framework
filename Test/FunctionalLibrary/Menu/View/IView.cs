@@ -8,26 +8,16 @@ namespace Test.FunctionalLibrary.Menu.View
 {
     public interface IView
     {
-        IView Enable_Preview_Pane();
+        IView Preview_Pane(bool enable);
 
-        IView Disable_Preview_Pane();
+        IView Preview_Pane_Graphic(bool enable);
 
-        IView Enable_Preview_Pane_Graphic();
+        IView Side_Bar(bool enable);
 
-        IView Disable_Preview_Pane_Graphic();
-
-        IView Enable_Side_Bar();
-
-        IView Disable_Side_Bar();
-
-        IView Enable_Always_Show_Event_Log();
-
-        IView Disable_Always_Show_Event_Log();
+        IView Always_Show_Event_Log(bool enable);
 
         IView Open_Tutorial_Video();
 
-        IView Show_Hidden_Mails();
-
-        IView Hide_Hidden_Mails();
+        IView Show_Hidden_Mails(bool enable);
     }
 }

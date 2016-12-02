@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Test.FunctionalLibrary.Menu;
 using Test.FunctionalLibrary.Navigator;
+using Test.FunctionalLibrary.Tabs;
 
 namespace Test.FunctionalLibrary
 {
@@ -14,15 +16,26 @@ namespace Test.FunctionalLibrary
         public Main()
         { }
 
-        private void Maximize_Window()
+        private void Maximize_Window(bool writeToLog)
         {
-            MailWasher.UiMap.MainWindow.MaximizeWindow_Button.Click();
+            try
+            {
+                MailWasher.UiMap.MainWindow.MaximizeWindow_Button.Click();
+                if(writeToLog)
+                {
+                    Log.Information("Invoked {MethodName:l} method", MethodBase.GetCurrentMethod().Name);
+                }
+            }
+            catch(Exception)
+            {
+                Log.Error("Failed to invoke {MethodName:l} method", MethodBase.GetCurrentMethod().Name);
+                throw;
+            }
         }
 
         IMain IMain.Maximize_Window()
         {
-            this.Maximize_Window();
-            Log.Information("FunctionalLibrary.Main: Maximized Window");
+            this.Maximize_Window(true);
             return this;
         }
 
@@ -33,9 +46,17 @@ namespace Test.FunctionalLibrary
 
         IMain IMain.Minimize_Window()
         {
-            this.Minimize_Window();
-            Log.Information("FunctionalLibrary.Main: Minimized Window");
-            return this;
+            try
+            {
+                this.Minimize_Window();
+                Log.Information("Invoked {MethodName:l} method", MethodBase.GetCurrentMethod().Name);
+                return this;
+            }
+            catch(Exception)
+            {
+                Log.Error("Failed to invoke {MethodName:l} method", MethodBase.GetCurrentMethod().Name);
+                throw;
+            }
         }
 
         private void Close_Window()
@@ -45,9 +66,17 @@ namespace Test.FunctionalLibrary
 
         IMain IMain.Close_Window()
         {
-            this.Close_Window();
-            Log.Information("FunctionalLibrary.Main: Closed Window");
-            return this;
+            try
+            {
+                this.Close_Window();
+                Log.Information("Invoked {MethodName:l} method", MethodBase.GetCurrentMethod().Name);
+                return this;
+            }
+            catch(Exception)
+            {
+                Log.Error("Failed to invoke {MethodName:l} method", MethodBase.GetCurrentMethod().Name);
+                throw;
+            }
         }
 
         private IMenu Menu
@@ -63,6 +92,22 @@ namespace Test.FunctionalLibrary
             get
             {
                 return this.Menu;
+            }
+        }
+
+        private ITabs Tabs
+        {
+            get
+            {
+                return new Tabs.Tabs();
+            }
+        }
+
+        ITabs IMain.Tabs
+        {
+            get
+            {
+                return this.Tabs;
             }
         }
     }

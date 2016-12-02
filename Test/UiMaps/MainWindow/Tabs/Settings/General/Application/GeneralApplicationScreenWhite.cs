@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestStack.White.ScreenObjects;
@@ -33,7 +34,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxLanguageSelector);
+                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxLanguageSelector, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -49,7 +50,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxFontSelector);
+                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxFontSelector, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -65,7 +66,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxStartupOption);
+                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxStartupOption, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -81,7 +82,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxMinimiseOnClose);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxMinimiseOnClose, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -97,7 +98,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxMinimiseOnLaunchMail);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxMinimiseOnLaunchMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -113,7 +114,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxStartMinimised);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxStartMinimised, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -129,7 +130,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnMinimiseToTray);
+                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnMinimiseToTray, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -145,7 +146,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnMinimiseToTaskbar);
+                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnMinimiseToTaskbar, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -161,7 +162,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave);
+                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -177,7 +178,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.Window.Get<TestStack.White.UIItems.Button>(SearchCriteria.ByText(this.ResetButtonText)));
+                return new UiMapItems.Button.ButtonWhite(this.Window.Get<TestStack.White.UIItems.Button>(SearchCriteria.ByText(this.ResetButtonText)), MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -193,7 +194,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxRestoreHotKey);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxRestoreHotKey, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

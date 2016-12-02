@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Test.UiMaps.UiMapItems.Button;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
@@ -24,7 +25,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmCheckMail);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -32,7 +33,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmWashMail);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmWashMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -40,7 +41,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMailProgram);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMailProgram, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -48,7 +49,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmImport);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmImport, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -56,7 +57,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmExport);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmExport, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -64,7 +65,7 @@ namespace Test.UiMaps.MainWindow.Menu.File
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmExit);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmExit, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

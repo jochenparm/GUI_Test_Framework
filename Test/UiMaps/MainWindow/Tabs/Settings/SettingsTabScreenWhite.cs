@@ -1,4 +1,5 @@
-﻿using Test.UiMaps.MainWindow.Tabs.Settings.Factory;
+﻿using System.Reflection;
+using Test.UiMaps.MainWindow.Tabs.Settings.Factory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
@@ -28,7 +29,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.LblGeneralIcon.GetParent<TestStack.White.UIItems.TabItems.TabPage>());
+                return new UiMapItems.Button.TabPageToButtonWhite(this.LblGeneralIcon.GetParent<TestStack.White.UIItems.TabItems.TabPage>(), MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -44,7 +45,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmAccounts);
+                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmAccounts, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -60,7 +61,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmSpamTools);
+                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmSpamTools, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -76,7 +77,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.LblDisplayIcon.GetParent<TestStack.White.UIItems.TabItems.TabPage>());
+                return new UiMapItems.Button.TabPageToButtonWhite(this.LblDisplayIcon.GetParent<TestStack.White.UIItems.TabItems.TabPage>(), MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -92,7 +93,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabRecycleBin);
+                return new UiMapItems.Button.TabPageToButtonWhite(this.TabRecycleBin, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -108,7 +109,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabSync);
+                return new UiMapItems.Button.TabPageToButtonWhite(this.TabSync, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

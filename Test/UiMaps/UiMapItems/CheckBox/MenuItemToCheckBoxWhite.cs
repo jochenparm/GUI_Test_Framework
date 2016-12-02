@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Automation;
@@ -14,10 +16,14 @@ namespace Test.UiMaps.UiMapItems.CheckBox
     {
         private readonly TestStack.White.UIItems.MenuItems.Menu _menuItem;
 
-        public MenuItemToCheckBoxWhite(TestStack.White.UIItems.MenuItems.Menu menuItem)
-            : base(menuItem)
+        private readonly string _checkBoxName;
+
+        public MenuItemToCheckBoxWhite(TestStack.White.UIItems.MenuItems.Menu menuItem, string CheckBoxName)
+            : base(menuItem, CheckBoxName)
         {
             this._menuItem = menuItem;
+
+            this._checkBoxName = CheckBoxName;
         }
 
         private TogglePattern CurrentTogglePattern
@@ -40,7 +46,17 @@ namespace Test.UiMaps.UiMapItems.CheckBox
         {
             get
             {
-                return this.IsEnabled;
+                try
+                {
+                    bool returnValue = this.IsEnabled;
+                    Log.Debug("Returned {PropertyName:l} property of {CheckBoxName:l}", MethodBase.GetCurrentMethod().Name.Replace("get_", ""), this._checkBoxName);
+                    return returnValue;
+                }
+                catch(Exception)
+                {
+                    Log.Fatal("Failed to return {PropertyName:l} property of {CheckBoxName:l}", MethodBase.GetCurrentMethod().Name.Replace("get_", ""), this._checkBoxName);
+                    throw;
+                }
             }
         }
 
@@ -54,7 +70,16 @@ namespace Test.UiMaps.UiMapItems.CheckBox
 
         void ICheckBox.Disable()
         {
-            this.Disable();
+            try
+            {
+                this.Disable();
+                Log.Debug("Invoked {MethodName:l} method of {CheckBoxName:l}", MethodBase.GetCurrentMethod().Name, this._checkBoxName);
+            }
+            catch(Exception)
+            {
+                Log.Fatal("Failed to invoke {MethodName:l} method of {CheckBoxName:l}", MethodBase.GetCurrentMethod().Name, this._checkBoxName);
+                throw;
+            }
         }
 
         private void Enable()
@@ -67,7 +92,33 @@ namespace Test.UiMaps.UiMapItems.CheckBox
 
         void ICheckBox.Enable()
         {
-            this.Enable();
+            try
+            {
+                this.Enable();
+                Log.Debug("Invoked {MethodName:l} method of {CheckBoxName:l}", MethodBase.GetCurrentMethod().Name, this._checkBoxName);
+            }
+            catch(Exception)
+            {
+                Log.Fatal("Failed to invoke {MethodName:l} method of {CheckBoxName:l}", MethodBase.GetCurrentMethod().Name, this._checkBoxName);
+                throw;
+            }
+        }
+
+        private void Set(bool enable)
+        {
+            if(enable)
+            {
+                this.Enable();
+            }
+            else
+            {
+                this.Disable();
+            }
+        }
+
+        void ICheckBox.Set(bool enable)
+        {
+            this.Set(enable);
         }
     }
 }

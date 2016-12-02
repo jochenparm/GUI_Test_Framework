@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestStack.White.ScreenObjects;
@@ -25,7 +26,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.SearchBar
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxSearch);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxSearch, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -41,7 +42,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.SearchBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnClearFrom);
+                return new UiMapItems.Button.ButtonWhite(this.BtnClearFrom, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -57,7 +58,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.SearchBar
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxPeriodAlt);
+                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxPeriodAlt, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -73,7 +74,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.SearchBar
         {
             get
             {
-                return new UiMapItems.TextLabel.TextLabelWhite(this.TxtBlkDisplayValue);
+                return new UiMapItems.TextLabel.TextLabelWhite(this.TxtBlkDisplayValue, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

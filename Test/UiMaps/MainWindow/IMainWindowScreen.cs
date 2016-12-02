@@ -6,10 +6,10 @@
         UiMaps.MainWindow.Tabs.ITabsScreen Tabs { get; }
         UiMaps.MainWindow.Menu.IMenuScreen Menu { get; }
 
-        UiMapItems.Button.IButton InboxTab_Button { get; }
-        UiMapItems.Button.IButton RecycleBinTab_Button { get; }
-        UiMapItems.Button.IButton SettingsTab_Button { get; }
-        UiMapItems.Button.IButton EventLogTab_Button { get; }
+        UiMapItems.Tab.ITab Inbox_Tab { get; }
+        UiMapItems.Tab.ITab RecycleBin_Tab { get; }
+        UiMapItems.Tab.ITab Settings_Tab { get; }
+        UiMapItems.Tab.ITab EventLog_Tab { get; }
 
         UiMapItems.Button.IButton MinimizeWindow_Button { get; }
 

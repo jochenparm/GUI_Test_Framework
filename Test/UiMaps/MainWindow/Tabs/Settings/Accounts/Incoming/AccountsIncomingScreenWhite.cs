@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestStack.White.ScreenObjects;
@@ -35,7 +36,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxServerAddress);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxServerAddress, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -51,7 +52,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxUsername);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxUsername, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -67,7 +68,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxPassword);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxPassword, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -83,7 +84,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxPortNumber);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxPortNumber, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -99,7 +100,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxCache);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxCache, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -115,7 +116,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxSSL);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxSSL, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -131,7 +132,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxUseOAUTH);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxUseOAUTH, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -147,7 +148,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxDownloadRead);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxDownloadRead, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -163,7 +164,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxFoldering);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxFoldering, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -179,7 +180,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxRememberPassword);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxRememberPassword, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -195,7 +196,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.HeaderSite);
+                return new UiMapItems.Button.ButtonWhite(this.HeaderSite, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -211,7 +212,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxServerType);
+                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxServerType, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -227,7 +228,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.ComBoxFoldering);
+                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.ComBoxFoldering, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -243,7 +244,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Incoming
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave);
+                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

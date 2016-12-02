@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Test.UiMaps.UiMapItems.Button;
@@ -54,7 +55,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmPreviewPane);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmPreviewPane, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -62,7 +63,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmPreviewSplash);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmPreviewSplash, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -70,7 +71,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmSideBar);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmSideBar, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -78,7 +79,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmEventLog);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmEventLog, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -86,7 +87,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmVideo);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmVideo, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -94,7 +95,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmShowHiddenEmails);
+                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmShowHiddenEmails, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Test.UiMaps.UiMapItems.Button;
@@ -103,7 +104,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddFriend);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddFriend, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -111,7 +112,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddFriendDomain);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddFriendDomain, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -119,7 +120,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmRemoveFriend);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmRemoveFriend, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -127,7 +128,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddBlack);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddBlack, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -135,7 +136,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddBlackDomain);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddBlackDomain, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -143,7 +144,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmRemoveBlack);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmRemoveBlack, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -151,7 +152,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMarkSpam);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMarkSpam, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -159,7 +160,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMarkGood);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMarkGood, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -167,7 +168,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMarkDelete);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMarkDelete, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -175,7 +176,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmUnmarkDelete);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmUnmarkDelete, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -183,7 +184,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmDeleteAll);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmDeleteAll, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -191,7 +192,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmBounce);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmBounce, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -199,7 +200,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmQuickReply);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmQuickReply, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -207,7 +208,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmQuickForward);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmQuickForward, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -215,7 +216,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmDownloadFull);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmDownloadFull, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -223,7 +224,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmClearGrid);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmClearGrid, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

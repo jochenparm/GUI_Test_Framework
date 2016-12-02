@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Navigator.Tabs.Inbox
     {
         public Inbox()
         {
-            MailWasher.UiMap.MainWindow.InboxTab_Button.Click();
+            MailWasher.UiMap.MainWindow.Inbox_Tab.Open();
         }
     }
 }

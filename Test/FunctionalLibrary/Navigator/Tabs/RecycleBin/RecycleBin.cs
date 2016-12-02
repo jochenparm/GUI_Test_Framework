@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Navigator.Tabs.RecycleBin
     {
         public RecycleBin()
         {
-            MailWasher.UiMap.MainWindow.RecycleBinTab_Button.Click();
+            MailWasher.UiMap.MainWindow.RecycleBin_Tab.Open();
         }
     }
 }

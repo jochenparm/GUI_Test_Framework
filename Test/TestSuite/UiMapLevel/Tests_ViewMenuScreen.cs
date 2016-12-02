@@ -51,7 +51,7 @@ namespace Test.TestSuite.UiMapLevel
     {
         public Tests_ViewMenuScreen_PreviewPaneGraphic_CheckBox()
             : base(() => MailWasher.Navigator.Menu.View.Navigate(),
-                  () => MailWasher.Main.Menu.View.Enable_Preview_Pane(),
+                  () => MailWasher.Main.Menu.View.Preview_Pane(true),
                   () => MailWasher.UiMap.MainWindow.Menu.View.Preview_Pane_Graphic_CheckBox)
         { }
     }

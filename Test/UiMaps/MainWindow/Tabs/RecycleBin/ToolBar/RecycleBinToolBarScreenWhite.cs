@@ -1,4 +1,5 @@
-﻿using TestStack.White.ScreenObjects;
+﻿using System.Reflection;
+using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
 namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
@@ -21,7 +22,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnRestoreMail);
+                return new UiMapItems.Button.ButtonWhite(this.BtnRestoreMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -29,7 +30,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnEmptyBin);
+                return new UiMapItems.Button.ButtonWhite(this.BtnEmptyBin, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -37,7 +38,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.TglBtnQuickDisplay);
+                return new UiMapItems.Button.ButtonWhite(this.TglBtnQuickDisplay, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -45,7 +46,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxShowAllMail);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxShowAllMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -53,7 +54,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxHideAutodeletedEmails);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxHideAutodeletedEmails, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

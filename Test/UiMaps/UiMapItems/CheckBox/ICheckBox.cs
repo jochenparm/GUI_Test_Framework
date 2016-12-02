@@ -6,6 +6,8 @@
 
         void Disable();
 
+        void Set(bool enable);
+
         bool IsEnabled { get; }
     }
 }

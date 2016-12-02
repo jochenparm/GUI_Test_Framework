@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestStack.White.ScreenObjects;
@@ -27,7 +28,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxMinimiseAfterWash);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxMinimiseAfterWash, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -43,7 +44,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxLaunchProgram);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxLaunchProgram, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -59,7 +60,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxUseDefaultIcon);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxUseDefaultIcon, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -75,7 +76,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxProgramList);
+                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxProgramList, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -91,7 +92,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxCustomPath);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxCustomPath, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -107,7 +108,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave);
+                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

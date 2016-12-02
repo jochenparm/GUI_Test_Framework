@@ -14,27 +14,27 @@ namespace Test.TestSuite.UiMapLevel.MainWindow
         }
 
         [Test]
-        public void MainWindow_Verify_InboxTab_Button_Is_OnScreen_On_Start()
+        public void MainWindow_Verify_Inbox_Tab_Is_OnScreen_On_Start()
         {
-            MailWasher.UiMap.MainWindow.InboxTab_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Inbox_Tab.IsOnScreen.ShouldBeTrue();
         }
 
         [Test]
-        public void MainWindow_Verify_RecycleBinTab_Button_Is_OnScreen_On_Start()
+        public void MainWindow_Verify_RecycleBin_Tab_Is_OnScreen_On_Start()
         {
-            MailWasher.UiMap.MainWindow.RecycleBinTab_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.RecycleBin_Tab.IsOnScreen.ShouldBeTrue();
         }
 
         [Test]
-        public void MainWindow_Verify_EventLogTab_Button_Isnt_OnScreen_On_Start()
+        public void MainWindow_Verify_EventLog_Tab_Isnt_OnScreen_On_Start()
         {
-            MailWasher.UiMap.MainWindow.EventLogTab_Button.IsOnScreen.ShouldBeFalse();
+            MailWasher.UiMap.MainWindow.EventLog_Tab.IsOnScreen.ShouldBeFalse();
         }
 
         [Test]
-        public void MainWindow_Verify_SettingsTab_Button_Is_OnScreen_On_Start()
+        public void MainWindow_Verify_Settings_Tab_Is_OnScreen_On_Start()
         {
-            MailWasher.UiMap.MainWindow.SettingsTab_Button.IsOnScreen.ShouldBeTrue();
+            MailWasher.UiMap.MainWindow.Settings_Tab.IsOnScreen.ShouldBeTrue();
         }
 
         [Test]

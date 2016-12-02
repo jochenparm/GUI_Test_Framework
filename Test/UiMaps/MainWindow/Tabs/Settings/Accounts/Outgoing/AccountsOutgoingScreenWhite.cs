@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestStack.White.ScreenObjects;
@@ -32,7 +33,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxAddress);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxAddress, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -48,7 +49,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxPortNumber);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxPortNumber, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -64,7 +65,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxUsername);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxUsername, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -80,7 +81,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.PswdBxPassword);
+                return new UiMapItems.TextBox.TextBoxWhite(this.PswdBxPassword, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -96,7 +97,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxAuthentication);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxAuthentication, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -112,7 +113,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.HeaderSite);
+                return new UiMapItems.Button.ButtonWhite(this.HeaderSite, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -128,7 +129,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnRestoreDefault);
+                return new UiMapItems.Button.ButtonWhite(this.BtnRestoreDefault, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -144,7 +145,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxAuthentication);
+                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxAuthentication, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -160,7 +161,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnUseIncomingAuth);
+                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnUseIncomingAuth, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -176,7 +177,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnUseCustomAuth);
+                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnUseCustomAuth, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -192,7 +193,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave);
+                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

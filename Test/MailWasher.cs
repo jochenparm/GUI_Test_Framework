@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using Castle.Core.Logging;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using Test.FunctionalLibrary;
 using Test.FunctionalLibrary.Navigator;
 using Test.UiMaps;
 using TestStack.White;
+using TestStack.White.Configuration;
 using TestStack.White.ScreenObjects;
 
 //server type: IMAP
@@ -26,20 +28,37 @@ namespace Test
 
         public static void Init()
         {
-            Log.Logger = new LoggerConfiguration()
-                                    .WriteTo.Console()
-                                    .CreateLogger();
-            Log.Information("Launched MailWasher Free");
+            Configure_White();
+            Init_Logger();
+            Launch_MailWasher();
+        }
+
+        public static void DeInit()
+        {
+            Close_MailWasher();
+        }
+
+        private static void Launch_MailWasher()
+        {
             _application = Application.Launch(Constants.applicationPath);
             _screenRepository = new ScreenRepository(_application);
             Thread.Sleep(3250);
         }
 
-        public static void DeInit()
+        private static void Close_MailWasher()
         {
             _application.Close();
-            Log.Information("Closed MailWasher Free");
             Thread.Sleep(750);
+        }
+
+        private static void Init_Logger()
+        {
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Verbose().WriteTo.Console().CreateLogger();
+        }
+
+        private static void Configure_White()
+        {
+            CoreAppXmlConfiguration.Instance.LoggerFactory = new WhiteDefaultLoggerFactory(LoggerLevel.Off);
         }
 
         public static IUiMap UiMap

@@ -6,10 +6,13 @@ namespace Test.UiMaps.UiMapItems.Button
     {
         private readonly TestStack.White.UIItems.Label _label;
 
-        public LabelToButtonWhite(TestStack.White.UIItems.Label label)
-            : base(label)
+        private readonly string _buttonName;
+
+        public LabelToButtonWhite(TestStack.White.UIItems.Label label, string ButtonName)
+            : base(label, ButtonName)
         {
             this._label = label;
+            this._buttonName = ButtonName;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Test.UiMaps.MainWindow.Menu.Email;
 using Test.UiMaps.MainWindow.Menu.Factory;
 using Test.UiMaps.MainWindow.Menu.File;
@@ -63,7 +64,7 @@ namespace Test.UiMaps.MainWindow.Menu
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmFile);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmFile, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -71,7 +72,7 @@ namespace Test.UiMaps.MainWindow.Menu
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMessage);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMessage, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -79,7 +80,7 @@ namespace Test.UiMaps.MainWindow.Menu
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmHelp);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmHelp, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -87,7 +88,7 @@ namespace Test.UiMaps.MainWindow.Menu
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmView);
+                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmView, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

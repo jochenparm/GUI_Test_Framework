@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestStack.White.ScreenObjects;
@@ -25,7 +26,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.General
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxAccountName);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxAccountName, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -41,7 +42,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.General
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxEmailAddress);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxEmailAddress, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -57,7 +58,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.General
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxDefaultCheck);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxDefaultCheck, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -73,7 +74,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.General
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave);
+                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

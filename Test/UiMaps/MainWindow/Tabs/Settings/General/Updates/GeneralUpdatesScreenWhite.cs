@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestStack.White.ScreenObjects;
@@ -25,7 +26,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Updates
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxAutoCheck);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxAutoCheck, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -41,7 +42,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Updates
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave);
+                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -57,7 +58,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Updates
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxDownloadPath);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxDownloadPath, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -73,7 +74,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Updates
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxFrequencyValue);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxFrequencyValue, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

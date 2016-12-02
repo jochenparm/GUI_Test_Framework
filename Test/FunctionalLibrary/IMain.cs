@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Test.FunctionalLibrary.Menu;
 using Test.FunctionalLibrary.Navigator;
+using Test.FunctionalLibrary.Tabs;
 
 namespace Test.FunctionalLibrary
 {
@@ -17,5 +18,7 @@ namespace Test.FunctionalLibrary
         IMain Close_Window();
 
         IMenu Menu { get; }
+
+        ITabs Tabs { get; }
     }
 }

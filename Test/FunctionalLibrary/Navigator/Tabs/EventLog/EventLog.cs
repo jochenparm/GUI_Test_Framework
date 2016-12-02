@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Navigator.Tabs.EventLog
     {
         public EventLog()
         {
-            MailWasher.UiMap.MainWindow.EventLogTab_Button.Click();
+            MailWasher.UiMap.MainWindow.EventLog_Tab.Open();
         }
     }
 }

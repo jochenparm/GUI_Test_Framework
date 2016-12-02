@@ -1,4 +1,5 @@
-﻿using Test.UiMaps.MainWindow.ScreenFactory;
+﻿using System.Reflection;
+using Test.UiMaps.MainWindow.ScreenFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -53,7 +54,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.Btn_Min_Window);
+                return new UiMapItems.Button.ButtonWhite(this.Btn_Min_Window, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -69,7 +70,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.Btn_Max_Window);
+                return new UiMapItems.Button.ButtonWhite(this.Btn_Max_Window, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -85,7 +86,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.Btn_Close_Window);
+                return new UiMapItems.Button.ButtonWhite(this.Btn_Close_Window, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -97,67 +98,67 @@ namespace Test.UiMaps.MainWindow
             }
         }
 
-        private UiMapItems.Button.IButton InboxTab_Button
+        private UiMapItems.Tab.ITab Inbox_Tab
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmInbox);
+                return new UiMapItems.Tab.TabWhite(this.TabItmInbox, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
-        UiMapItems.Button.IButton IMainWindowScreen.InboxTab_Button
+        UiMapItems.Tab.ITab IMainWindowScreen.Inbox_Tab
         {
             get
             {
-                return this.InboxTab_Button;
+                return this.Inbox_Tab;
             }
         }
 
-        private UiMapItems.Button.IButton RecycleBinTab_Button
+        private UiMapItems.Tab.ITab RecycleBin_Tab
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmRecycleBin);
+                return new UiMapItems.Tab.TabWhite(this.TabItmRecycleBin, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
-        UiMapItems.Button.IButton IMainWindowScreen.RecycleBinTab_Button
+        UiMapItems.Tab.ITab IMainWindowScreen.RecycleBin_Tab
         {
             get
             {
-                return this.RecycleBinTab_Button;
+                return this.RecycleBin_Tab;
             }
         }
 
-        private UiMapItems.Button.IButton SettingsTab_Button
+        private UiMapItems.Tab.ITab Settings_Tab
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmSettings);
+                return new UiMapItems.Tab.TabWhite(this.TabItmSettings, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
-        UiMapItems.Button.IButton IMainWindowScreen.SettingsTab_Button
+        UiMapItems.Tab.ITab IMainWindowScreen.Settings_Tab
         {
             get
             {
-                return this.SettingsTab_Button;
+                return this.Settings_Tab;
             }
         }
 
-        private UiMapItems.Button.IButton EventLogTab_Button
+        private UiMapItems.Tab.ITab EventLog_Tab
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmEventLog);
+                return new UiMapItems.Tab.TabWhite(this.TabItmEventLog, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
-        UiMapItems.Button.IButton IMainWindowScreen.EventLogTab_Button
+        UiMapItems.Tab.ITab IMainWindowScreen.EventLog_Tab
         {
             get
             {
-                return this.EventLogTab_Button;
+                return this.EventLog_Tab;
             }
         }
     }

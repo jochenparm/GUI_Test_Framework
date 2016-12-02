@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestStack.White.ScreenObjects;
@@ -29,7 +30,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNewMailPopup);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNewMailPopup, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -45,7 +46,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNewMailSound);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNewMailSound, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -61,7 +62,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNotSpam);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNotSpam, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -77,7 +78,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxErrorSound);
+                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxErrorSound, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -93,7 +94,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave);
+                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -109,7 +110,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnResetPopupDuration);
+                return new UiMapItems.Button.ButtonWhite(this.BtnResetPopupDuration, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -125,7 +126,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.Slider.SliderWhite(this.SldrPopupDuration);
+                return new UiMapItems.Slider.SliderWhite(this.SldrPopupDuration, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -141,7 +142,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxSoundPath);
+                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxSoundPath, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

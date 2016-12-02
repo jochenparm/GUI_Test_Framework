@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestStack.White.ScreenObjects;
@@ -23,7 +24,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.RecycleBin.General
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave);
+                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -39,7 +40,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.RecycleBin.General
         {
             get
             {
-                return new UiMapItems.Slider.SliderWhite(this.SldrClearCahce);
+                return new UiMapItems.Slider.SliderWhite(this.SldrClearCahce, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

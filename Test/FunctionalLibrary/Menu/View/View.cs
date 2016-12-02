@@ -13,102 +13,47 @@ namespace Test.FunctionalLibrary.Menu.View
             MailWasher.UiMap.MainWindow.Menu.View_Button.Click();
         }
 
-        private void Disable_Always_Show_Event_Log()
+        private void Always_Show_Event_Log(bool enable)
         {
-            MailWasher.UiMap.MainWindow.Menu.View.Always_Show_Event_Log_CheckBox.Disable();
+            MailWasher.UiMap.MainWindow.Menu.View.Always_Show_Event_Log_CheckBox.Set(enable);
         }
 
-        IView IView.Disable_Always_Show_Event_Log()
+        IView IView.Always_Show_Event_Log(bool enable)
         {
-            this.Disable_Always_Show_Event_Log();
+            this.Always_Show_Event_Log(enable);
             return this;
         }
 
-        private void Disable_Preview_Pane()
+        private void Preview_Pane(bool enable)
         {
-            MailWasher.UiMap.MainWindow.Menu.View.Preview_Pane_CheckBox.Disable();
+            MailWasher.UiMap.MainWindow.Menu.View.Preview_Pane_CheckBox.Set(enable);
         }
 
-        IView IView.Disable_Preview_Pane()
+        IView IView.Preview_Pane(bool enable)
         {
-            this.Disable_Preview_Pane();
+            this.Preview_Pane(enable);
             return this;
         }
 
-        private void Disable_Preview_Pane_Graphic()
+        private void Preview_Pane_Graphic(bool enable)
         {
-            MailWasher.UiMap.MainWindow.Menu.View.Preview_Pane_Graphic_CheckBox.Disable();
+            MailWasher.UiMap.MainWindow.Menu.View.Preview_Pane_Graphic_CheckBox.Set(enable);
         }
 
-        IView IView.Disable_Preview_Pane_Graphic()
+        IView IView.Preview_Pane_Graphic(bool enable)
         {
-            this.Disable_Preview_Pane_Graphic();
+            this.Preview_Pane_Graphic(enable);
             return this;
         }
 
-        private void Disable_Side_Bar()
+        private void Side_Bar(bool enable)
         {
-            MailWasher.UiMap.MainWindow.Menu.View.Side_Bar_CheckBox.Disable();
+            MailWasher.UiMap.MainWindow.Menu.View.Side_Bar_CheckBox.Set(enable);
         }
 
-        IView IView.Disable_Side_Bar()
+        IView IView.Side_Bar(bool enable)
         {
-            this.Disable_Side_Bar();
-            return this;
-        }
-
-        private void Enable_Always_Show_Event_Log()
-        {
-            MailWasher.UiMap.MainWindow.Menu.View.Always_Show_Event_Log_CheckBox.Enable();
-        }
-
-        IView IView.Enable_Always_Show_Event_Log()
-        {
-            this.Enable_Always_Show_Event_Log();
-            return this;
-        }
-
-        private void Enable_Preview_Pane()
-        {
-            MailWasher.UiMap.MainWindow.Menu.View.Preview_Pane_CheckBox.Enable();
-        }
-
-        IView IView.Enable_Preview_Pane()
-        {
-            this.Enable_Preview_Pane();
-            return this;
-        }
-
-        private void Enable_Preview_Pane_Graphic()
-        {
-            MailWasher.UiMap.MainWindow.Menu.View.Preview_Pane_Graphic_CheckBox.Enable();
-        }
-
-        IView IView.Enable_Preview_Pane_Graphic()
-        {
-            this.Enable_Preview_Pane_Graphic();
-            return this;
-        }
-
-        private void Enable_Side_Bar()
-        {
-            MailWasher.UiMap.MainWindow.Menu.View.Side_Bar_CheckBox.Enable();
-        }
-
-        IView IView.Enable_Side_Bar()
-        {
-            this.Enable_Side_Bar();
-            return this;
-        }
-
-        private void Hide_Hidden_Mails()
-        {
-            MailWasher.UiMap.MainWindow.Menu.View.Show_Hidden_Emails_CheckBox.Disable();
-        }
-
-        IView IView.Hide_Hidden_Mails()
-        {
-            this.Hide_Hidden_Mails();
+            this.Side_Bar(enable);
             return this;
         }
 
@@ -123,14 +68,14 @@ namespace Test.FunctionalLibrary.Menu.View
             return this;
         }
 
-        private void Show_Hidden_Mails()
+        private void Show_Hidden_Mails(bool enable)
         {
-            MailWasher.UiMap.MainWindow.Menu.View.Show_Hidden_Emails_CheckBox.Enable();
+            MailWasher.UiMap.MainWindow.Menu.View.Show_Hidden_Emails_CheckBox.Set(enable);
         }
 
-        IView IView.Show_Hidden_Mails()
+        IView IView.Show_Hidden_Mails(bool enable)
         {
-            this.Show_Hidden_Mails();
+            this.Show_Hidden_Mails(enable);
             return this;
         }
     }

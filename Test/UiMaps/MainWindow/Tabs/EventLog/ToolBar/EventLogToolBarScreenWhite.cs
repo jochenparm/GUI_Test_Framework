@@ -1,4 +1,5 @@
-﻿using TestStack.White.ScreenObjects;
+﻿using System.Reflection;
+using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
 namespace Test.UiMaps.MainWindow.Tabs.EventLog.ToolBar
@@ -18,7 +19,7 @@ namespace Test.UiMaps.MainWindow.Tabs.EventLog.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnClearEntry);
+                return new UiMapItems.Button.ButtonWhite(this.BtnClearEntry, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -26,7 +27,7 @@ namespace Test.UiMaps.MainWindow.Tabs.EventLog.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnResetLog);
+                return new UiMapItems.Button.ButtonWhite(this.BtnResetLog, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
     }

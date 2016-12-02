@@ -1,4 +1,5 @@
-﻿using Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar;
+﻿using System;
+using Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar;
 using Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar.Factory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
@@ -15,11 +16,19 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox
             this._toolBarFactory = new InboxToolBarFactoryWhite(screenRepository);
         }
 
-        public IInboxToolBarScreen ToolBar
+        private IInboxToolBarScreen ToolBar
         {
             get
             {
                 return this._toolBarFactory.PopulateInboxToolBarScreen();
+            }
+        }
+
+        IInboxToolBarScreen IInboxTabScreen.ToolBar
+        {
+            get
+            {
+                return this.ToolBar;
             }
         }
     }

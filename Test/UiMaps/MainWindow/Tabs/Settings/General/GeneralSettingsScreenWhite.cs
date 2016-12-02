@@ -1,4 +1,5 @@
-﻿using Test.UiMaps.MainWindow.Tabs.Settings.General.Factory;
+﻿using System.Reflection;
+using Test.UiMaps.MainWindow.Tabs.Settings.General.Factory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -75,7 +76,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmApplication);
+                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmApplication, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -91,7 +92,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmCheckMail);
+                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -107,7 +108,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmNotifications);
+                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmNotifications, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -123,7 +124,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmWashMail);
+                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmWashMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -139,7 +140,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmPerformance);
+                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmPerformance, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -155,7 +156,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmUpdate);
+                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmUpdate, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

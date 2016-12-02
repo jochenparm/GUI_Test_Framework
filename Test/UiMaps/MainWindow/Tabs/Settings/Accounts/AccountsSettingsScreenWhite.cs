@@ -1,4 +1,7 @@
-﻿using Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Factory;
+﻿using System;
+using System.Reflection;
+using Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Factory;
+using Test.UiMaps.UiMapItems.List;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -24,13 +27,14 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         private TestStack.White.UIItems.Button BtnRemoveAccount; //Button 'Remove Account'
         private TestStack.White.UIItems.Button BtnMoveUp; //Button 'Check Order Up'
         private TestStack.White.UIItems.Button BtnMoveDown; //Button 'Check Order Down'
+        private TestStack.White.UIItems.ListView LstBxAccounts; //ListView containing all mail accounts
 #pragma warning restore 0649 //Restores the 'is never assigned to, and will always have its default value null' warning
 
         private UiMapItems.Button.IButton General_Button
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmGeneral);
+                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmGeneral, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -46,7 +50,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmIncoming);
+                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmIncoming, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -62,7 +66,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmOutgoing);
+                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmOutgoing, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -78,7 +82,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         {
             get
             {
-                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmMailServer);
+                return new UiMapItems.Button.TabPageToButtonWhite(this.TabItmMailServer, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -94,7 +98,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnAddAccount);
+                return new UiMapItems.Button.ButtonWhite(this.BtnAddAccount, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -110,7 +114,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnRemoveAccount);
+                return new UiMapItems.Button.ButtonWhite(this.BtnRemoveAccount, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -126,7 +130,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnAutoDetect);
+                return new UiMapItems.Button.ButtonWhite(this.BtnAutoDetect, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -142,7 +146,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnMoveUp);
+                return new UiMapItems.Button.ButtonWhite(this.BtnMoveUp, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -158,7 +162,23 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnMoveDown);
+                return new UiMapItems.Button.ButtonWhite(this.BtnMoveDown, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+            }
+        }
+
+        private UiMapItems.List.IList Accounts_List
+        {
+            get
+            {
+                return new UiMapItems.List.ListWhite(this.LstBxAccounts, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+            }
+        }
+
+        IList IAccountsSettingsScreen.Accounts_List
+        {
+            get
+            {
+                return this.Accounts_List;
             }
         }
 

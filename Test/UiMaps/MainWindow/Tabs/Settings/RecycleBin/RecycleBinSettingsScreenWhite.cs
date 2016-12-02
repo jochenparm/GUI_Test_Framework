@@ -1,4 +1,5 @@
-﻿using Test.UiMaps.MainWindow.Tabs.Settings.RecycleBin.Factory;
+﻿using System.Reflection;
+using Test.UiMaps.MainWindow.Tabs.Settings.RecycleBin.Factory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
@@ -43,7 +44,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.RecycleBin
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxSettings.Items.Find(x => (x).Get<Label>(SearchCriteria.ByText(this.GeneralButtonLabelContent)).Visible));
+                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxSettings.Items.Find(x => (x).Get<Label>(SearchCriteria.ByText(this.GeneralButtonLabelContent)).Visible), MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -59,7 +60,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.RecycleBin
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxSettings.Items.Find(x => (x).Get<Label>(SearchCriteria.ByText(this.RestoringButtonLabelContent)).Visible));
+                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxSettings.Items.Find(x => (x).Get<Label>(SearchCriteria.ByText(this.RestoringButtonLabelContent)).Visible), MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

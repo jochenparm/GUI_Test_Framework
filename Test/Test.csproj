@@ -34,36 +34,28 @@
       <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0-beta\lib\nunit.core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0-beta\lib\nunit.core.interfaces.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    <Reference Include="nDumbster, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\nDumbster.1.0.3.0\lib\net40\nDumbster.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0-beta\lib\nunit.util.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=1.9.9.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0-beta\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="OpenPop, Version=2.0.4.369, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\nDumbster.1.0.3.0\lib\net40\OpenPop.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.2.1.0\lib\net45\Serilog.dll</HintPath>
+      <HintPath>..\packages\Serilog.2.3.0\lib\net45\Serilog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Serilog.Sinks.Console, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.Sinks.Console.2.1.0\lib\net45\Serilog.Sinks.Console.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Shouldly, Version=2.8.1.0, Culture=neutral, PublicKeyToken=6042cbcb05cbc941, processorArchitecture=MSIL">
-      <HintPath>..\packages\Shouldly.2.8.1\lib\net40\Shouldly.dll</HintPath>
+    <Reference Include="Shouldly, Version=2.8.2.0, Culture=neutral, PublicKeyToken=6042cbcb05cbc941, processorArchitecture=MSIL">
+      <HintPath>..\packages\Shouldly.2.8.2\lib\net40\Shouldly.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -97,6 +89,8 @@
     <Compile Include="FunctionalLibrary\Menu\Email\IEmail.cs" />
     <Compile Include="FunctionalLibrary\Menu\File\File.cs" />
     <Compile Include="FunctionalLibrary\Menu\File\IFile.cs" />
+    <Compile Include="FunctionalLibrary\Menu\Help\Help.cs" />
+    <Compile Include="FunctionalLibrary\Menu\Help\IHelp.cs" />
     <Compile Include="FunctionalLibrary\Menu\IMenu.cs" />
     <Compile Include="FunctionalLibrary\Menu\Menu.cs" />
     <Compile Include="FunctionalLibrary\Menu\View\IView.cs" />
@@ -165,9 +159,32 @@
     <Compile Include="FunctionalLibrary\Navigator\Tabs\Settings\Sync\Mobile\Mobile.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Tabs\Settings\Sync\Sync.cs" />
     <Compile Include="FunctionalLibrary\Navigator\Tabs\Tabs.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Inbox\IInbox.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Inbox\Inbox.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\ITabs.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\Accounts\General\ISettingsAccountsGeneral.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\Accounts\General\SettingsAccountsGeneral.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\Accounts\ISettingsAccounts.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\Accounts\SettingsAccounts.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Application\ISettingsGeneralApplication.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Application\SettingsGeneralApplication.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Checking_Mail\ISettingsGeneralCheckingMail.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Checking_Mail\SettingsGeneralCheckingMail.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Notifications\ISettingsGeneralNotifications.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Notifications\SettingsGeneralNotifications.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Performance\ISettingsGeneralPerformance.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Performance\SettingsGeneralPerformance.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Updates\ISettingsGeneralUpdates.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Updates\SettingsGeneralUpdates.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Washing_Mail\ISettingsGeneralWashingMail.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\General\Washing_Mail\SettingsGeneralWashingMail.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\ISettings.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Settings\Settings.cs" />
+    <Compile Include="FunctionalLibrary\Tabs\Tabs.cs" />
     <Compile Include="MailWasher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestSuite\FunctionalLevel\MainWindow\Functional_Test_MainWindow.cs" />
+    <Compile Include="TestSuite\FunctionalLevel\Tabs\Inbox\Functional_Tests_InboxTab.cs" />
     <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\General\Tests_AccountsGeneralScreen.cs" />
     <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\IMAP\Tests_AccountsIMAP.cs" />
     <Compile Include="TestSuite\UiMapLevel\Settings\Accounts\Incoming\Tests_AccountsIncomingScreen.cs" />
@@ -303,10 +320,14 @@
     <Compile Include="UiMaps\UiMapItems\DropDownMenu\DropDownMenuWhite.cs" />
     <Compile Include="UiMaps\UiMapItems\DropDownMenu\IDropDownMenu.cs" />
     <Compile Include="UiMaps\UiMapItems\IUiMapItem.cs" />
+    <Compile Include="UiMaps\UiMapItems\List\IList.cs" />
+    <Compile Include="UiMaps\UiMapItems\List\ListWhite.cs" />
     <Compile Include="UiMaps\UiMapItems\RadioButton\IRadioButton.cs" />
     <Compile Include="UiMaps\UiMapItems\RadioButton\RadioButtonWhite.cs" />
     <Compile Include="UiMaps\UiMapItems\Slider\ISlider.cs" />
     <Compile Include="UiMaps\UiMapItems\Slider\SliderWhite.cs" />
+    <Compile Include="UiMaps\UiMapItems\Tab\ITab.cs" />
+    <Compile Include="UiMaps\UiMapItems\Tab\TabWhite.cs" />
     <Compile Include="UiMaps\UiMapItems\TextBox\ITextBox.cs" />
     <Compile Include="UiMaps\UiMapItems\TextBox\TextBoxWhite.cs" />
     <Compile Include="UiMaps\UiMapItems\TextLabel\ITextLabel.cs" />
@@ -314,6 +335,7 @@
     <Compile Include="UiMaps\UiMapItems\UiMapItemWhite.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

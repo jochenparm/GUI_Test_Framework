@@ -1,4 +1,5 @@
-﻿using TestStack.White.ScreenObjects;
+﻿using System.Reflection;
+using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
 namespace Test.UiMaps.MainWindow.StatusBar
@@ -17,7 +18,7 @@ namespace Test.UiMaps.MainWindow.StatusBar
         {
             get
             {
-                return new UiMapItems.TextLabel.TextLabelWhite(this.mailStatus);
+                return new UiMapItems.TextLabel.TextLabelWhite(this.mailStatus, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -33,7 +34,7 @@ namespace Test.UiMaps.MainWindow.StatusBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnDeleteStatus);
+                return new UiMapItems.Button.ButtonWhite(this.BtnDeleteStatus, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

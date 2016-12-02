@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Navigator.Tabs.Settings
     {
         public Settings()
         {
-            MailWasher.UiMap.MainWindow.SettingsTab_Button.Click();
+            MailWasher.UiMap.MainWindow.Settings_Tab.Open();
         }
 
         public Accounts.IAccounts Accounts

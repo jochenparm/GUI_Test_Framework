@@ -6,10 +6,13 @@ namespace Test.UiMaps.UiMapItems.Button
     {
         private readonly TestStack.White.UIItems.MenuItems.Menu _menuItem;
 
-        public MenuItemToButtonWhite(TestStack.White.UIItems.MenuItems.Menu menuItem)
-            : base(menuItem)
+        private readonly string _buttonName;
+
+        public MenuItemToButtonWhite(TestStack.White.UIItems.MenuItems.Menu MenuItem, string ButtonName)
+            : base(MenuItem, ButtonName)
         {
-            this._menuItem = menuItem;
+            this._menuItem = MenuItem;
+            this._buttonName = ButtonName;
         }
     }
 }

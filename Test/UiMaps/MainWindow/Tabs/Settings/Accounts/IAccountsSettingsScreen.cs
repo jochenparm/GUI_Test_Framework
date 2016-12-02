@@ -20,5 +20,6 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts
         UiMapItems.Button.IButton Import_Accounts_Button { get; }
         UiMapItems.Button.IButton Check_Order_Up_Button { get; }
         UiMapItems.Button.IButton Check_Order_Down_Button { get; }
+        UiMapItems.List.IList Accounts_List { get; }
     }
 }
