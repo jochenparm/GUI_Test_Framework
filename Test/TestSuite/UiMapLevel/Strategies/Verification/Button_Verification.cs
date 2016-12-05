@@ -15,15 +15,13 @@ namespace Test.TestSuite.UiMapLevel.Strategies.Verification
         private readonly Func<IButton> _SUT;
 
         public Button_Verification(Func<INavigator> path, Func<IButton> SUT)
-            : base(path)
+            : this(path, () => { }, SUT)
+        { }
+
+        public Button_Verification(Func<INavigator> path, Action precondition, Func<IButton> SUT)
+            : base(path, SUT)
         {
             this._SUT = SUT;
-        }
-
-        [Test]
-        public void Is_OnScreen_On_Start()
-        {
-            this._SUT().IsOnScreen.ShouldBeTrue();
         }
     }
 }

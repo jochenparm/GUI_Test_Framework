@@ -5,16 +5,22 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Test.UiMaps.UiMapItems.Button;
+using Test.UiMaps.UiMapItems.Button.ButtonFactory;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
 namespace Test.UiMaps.MainWindow.Menu.Email
 {
-    internal class EmailMenuScreenWhite : AppScreen, IEmailMenuScreen
+    public class EmailMenuScreenWhite : AppScreen, IEmailMenuScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public EmailMenuScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Field XYZ is never assigned to, and will always have its default value XX
 
@@ -104,7 +110,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddFriend, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmAddFriend, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -112,7 +118,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddFriendDomain, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmAddFriendDomain, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -120,7 +126,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmRemoveFriend, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmRemoveFriend, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -128,7 +134,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddBlack, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmAddBlack, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -136,7 +142,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmAddBlackDomain, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmAddBlackDomain, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -144,7 +150,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmRemoveBlack, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmRemoveBlack, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -152,7 +158,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMarkSpam, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmMarkSpam, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -160,7 +166,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMarkGood, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmMarkGood, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -168,7 +174,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMarkDelete, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmMarkDelete, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -176,7 +182,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmUnmarkDelete, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmUnmarkDelete, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -184,7 +190,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmDeleteAll, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmDeleteAll, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -192,7 +198,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmBounce, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmBounce, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -200,7 +206,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmQuickReply, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmQuickReply, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -208,7 +214,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmQuickForward, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmQuickForward, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -216,7 +222,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmDownloadFull, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmDownloadFull, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -224,7 +230,7 @@ namespace Test.UiMaps.MainWindow.Menu.Email
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmClearGrid, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmClearGrid, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -6,9 +7,13 @@ namespace Test.UiMaps.MainWindow.Tabs.EventLog.ToolBar
 {
     public class EventLogToolBarScreenWhite : AppScreen, IEventLogToolBarScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public EventLogToolBarScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649
         private TestStack.White.UIItems.Button BtnClearEntry;
@@ -19,7 +24,7 @@ namespace Test.UiMaps.MainWindow.Tabs.EventLog.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnClearEntry, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnClearEntry, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -27,7 +32,7 @@ namespace Test.UiMaps.MainWindow.Tabs.EventLog.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnResetLog, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnResetLog, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
     }

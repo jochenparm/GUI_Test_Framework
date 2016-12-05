@@ -51,6 +51,16 @@ namespace Test.UiMaps.UiMapItems.List
             }
         }
 
+        private bool Exists(string itemName)
+        {
+            return this._list.Rows.Exists(x => x.Name.Equals("itemName"));
+        }
+
+        bool IList.Exists(string itemName)
+        {
+            return this.Exists(itemName);
+        }
+
         private bool IsSelected(string itemName)
         {
             return Selected_Item.Equals(itemName);

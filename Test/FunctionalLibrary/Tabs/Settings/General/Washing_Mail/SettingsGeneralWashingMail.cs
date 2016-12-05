@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Tabs.Settings.General.Washing_Mail
     {
         public SettingsGeneralWashingMail()
         {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.General.Washing_Mail_Button.Click();
+            MailWasher.Navigator.Tabs.Settings.General.Washing_Mail.Navigate();
         }
 
         private void Launch_After_Wash_Mail(bool enable)

@@ -1,6 +1,7 @@
 ﻿using System;
 using Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar;
 using Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar.Factory;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 

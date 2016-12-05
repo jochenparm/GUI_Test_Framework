@@ -14,15 +14,15 @@ namespace Test.FunctionalLibrary.Navigator
         {
         }
 
-        private IMenu Menu
+        private IMenuNavigator Menu
         {
             get
             {
-                return new Menu.Menu();
+                return new Menu.MenuNavigator();
             }
         }
 
-        IMenu INavigator.Menu
+        IMenuNavigator INavigator.Menu
         {
             get
             {
@@ -30,15 +30,15 @@ namespace Test.FunctionalLibrary.Navigator
             }
         }
 
-        private ITabs Tabs
+        private ITabsNavigator Tabs
         {
             get
             {
-                return new Tabs.Tabs();
+                return new Tabs.TabNavigator();
             }
         }
 
-        ITabs INavigator.Tabs
+        ITabsNavigator INavigator.Tabs
         {
             get
             {

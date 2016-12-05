@@ -15,15 +15,13 @@ namespace Test.TestSuite.UiMapLevel.Strategies.Verification
         private readonly Func<IDropDownMenu> _SUT;
 
         public DropDownMenu_Verification(Func<INavigator> path, Func<IDropDownMenu> SUT)
-            : base(path)
+            : this(path, () => { }, SUT)
+        { }
+
+        public DropDownMenu_Verification(Func<INavigator> path, Action precondition, Func<IDropDownMenu> SUT)
+            : base(path, SUT)
         {
             this._SUT = SUT;
-        }
-
-        [Test]
-        public void Is_OnScreen_On_Start()
-        {
-            this._SUT().IsOnScreen.ShouldBeTrue();
         }
 
         [Test]

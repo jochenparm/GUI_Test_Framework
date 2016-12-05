@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -11,9 +12,13 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
 {
     public class GeneralPerformanceScreenWhite : AppScreen, IGeneralPerformanceScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public GeneralPerformanceScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
         private TestStack.White.UIItems.CheckBox ChkBxLowQAnimation; // CheckBox 'Use low quality animation'
@@ -31,7 +36,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxLowQAnimation, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxLowQAnimation, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -47,7 +52,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxDeferredLoading, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxDeferredLoading, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -63,7 +68,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxCollapseGroupHeaders, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxCollapseGroupHeaders, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -79,7 +84,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNoFetchRefresh, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxNoFetchRefresh, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -95,7 +100,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxEnableScreenreaders, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxEnableScreenreaders, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -111,7 +116,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnResetSpamThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnResetSpamThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -127,7 +132,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -143,7 +148,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
         {
             get
             {
-                return new UiMapItems.Slider.SliderWhite(this.SldrThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetSlider(this.SldrThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -159,7 +164,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Performance
         {
             get
             {
-                return new UiMapItems.Slider.SliderWhite(this.SldrMailToCharCount, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetSlider(this.SldrMailToCharCount, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

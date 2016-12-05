@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.WindowItems;
@@ -12,9 +13,13 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
 {
     public class GeneralApplicationScreenWhite : AppScreen, IGeneralApplicationScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public GeneralApplicationScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
         private TestStack.White.UIItems.ListBoxItems.ComboBox CmbBxLanguageSelector; // Dropdown menu 'Language'
@@ -34,7 +39,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxLanguageSelector, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetDropDownMenu(this.CmbBxLanguageSelector, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -50,7 +55,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxFontSelector, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetDropDownMenu(this.CmbBxFontSelector, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -66,7 +71,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxStartupOption, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetDropDownMenu(this.CmbBxStartupOption, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -82,7 +87,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxMinimiseOnClose, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxMinimiseOnClose, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -98,7 +103,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxMinimiseOnLaunchMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxMinimiseOnLaunchMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -114,7 +119,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxStartMinimised, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxStartMinimised, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -130,7 +135,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnMinimiseToTray, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetRadioButton(this.RdoBtnMinimiseToTray, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -146,7 +151,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnMinimiseToTaskbar, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetRadioButton(this.RdoBtnMinimiseToTaskbar, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -162,7 +167,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -178,7 +183,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.Window.Get<TestStack.White.UIItems.Button>(SearchCriteria.ByText(this.ResetButtonText)), MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.Window.Get<TestStack.White.UIItems.Button>(SearchCriteria.ByText(this.ResetButtonText)), MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -194,7 +199,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Application
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxRestoreHotKey, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxRestoreHotKey, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

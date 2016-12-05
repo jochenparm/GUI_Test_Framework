@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -11,9 +12,13 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.General
 {
     public class AccountsGeneralScreenWhite : AppScreen, IAccountsGeneralScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public AccountsGeneralScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
         private TestStack.White.UIItems.TextBox TxtBxAccountName; // TextBox 'Account Description'
@@ -26,7 +31,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.General
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxAccountName, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxAccountName, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -42,7 +47,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.General
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxEmailAddress, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxEmailAddress, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -58,7 +63,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.General
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxDefaultCheck, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxDefaultCheck, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -74,7 +79,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.General
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

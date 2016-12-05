@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Tabs.Settings.General.Application
     {
         public SettingsGeneralApplication()
         {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.General.Application_Button.Click();
+            MailWasher.Navigator.Tabs.Settings.General.Application.Navigate();
         }
 
         private const string FontIdentifierSegoe = "Segoe UI";

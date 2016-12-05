@@ -1,64 +1,70 @@
 ﻿using NUnit.Framework;
 using Shouldly;
+using Test.TestSuite.UiMapLevel.Strategies.Verification;
 using Test.UiMaps;
 
 namespace Test.TestSuite.UiMapLevel.MainWindow
 {
-    [TestFixture, Property("UiMap", "MainWindow_UIItems")]
-    public class Tests_MainWindowScreen_Buttons
+    [TestFixture, Property("UiMap_MainWindow", "MinimizeWindow_Button")]
+    public class Tests_MainWindowScreen_MinimizeWindow_Button : Button_Verification
     {
-        [SetUp]
-        public void SetUp()
-        {
-            MailWasher.Init();
-        }
+        public Tests_MainWindowScreen_MinimizeWindow_Button()
+            : base(() => null,
+                  () => MailWasher.UiMap.MainWindow.MinimizeWindow_Button)
+        { }
+    }
 
-        [Test]
-        public void MainWindow_Verify_Inbox_Tab_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Inbox_Tab.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_MainWindow", "MaximizeWindow_Button")]
+    public class Tests_MainWindowScreen_MaximizeWindow_Button : Button_Verification
+    {
+        public Tests_MainWindowScreen_MaximizeWindow_Button()
+            : base(() => null,
+                  () => MailWasher.UiMap.MainWindow.MaximizeWindow_Button)
+        { }
+    }
 
-        [Test]
-        public void MainWindow_Verify_RecycleBin_Tab_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.RecycleBin_Tab.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_MainWindow", "CloseWindow_Button")]
+    public class Tests_MainWindowScreen_CloseWindow_Button : Button_Verification
+    {
+        public Tests_MainWindowScreen_CloseWindow_Button()
+            : base(() => null,
+                  () => MailWasher.UiMap.MainWindow.CloseWindow_Button)
+        { }
+    }
 
-        [Test]
-        public void MainWindow_Verify_EventLog_Tab_Isnt_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.EventLog_Tab.IsOnScreen.ShouldBeFalse();
-        }
+    [TestFixture, Property("UiMap_MainWindow", "Inbox_Tab")]
+    public class Tests_MainWindowScreen_Inbox_Tab : Tab_Verification
+    {
+        public Tests_MainWindowScreen_Inbox_Tab()
+            : base(() => null,
+                  () => MailWasher.UiMap.MainWindow.Inbox_Tab)
+        { }
+    }
 
-        [Test]
-        public void MainWindow_Verify_Settings_Tab_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Settings_Tab.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_MainWindow", "RecycleBin_Tab")]
+    public class Tests_MainWindowScreen_RecycleBin_Tab : Tab_Verification
+    {
+        public Tests_MainWindowScreen_RecycleBin_Tab()
+            : base(() => null,
+                  () => MailWasher.UiMap.MainWindow.RecycleBin_Tab)
+        { }
+    }
 
-        [Test]
-        public void MainWindow_Verify_MinimizeWindow_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.MinimizeWindow_Button.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_MainWindow", "Settings_Tab")]
+    public class Tests_MainWindowScreen_Settings_Tab : Tab_Verification
+    {
+        public Tests_MainWindowScreen_Settings_Tab()
+            : base(() => null,
+                  () => MailWasher.UiMap.MainWindow.Settings_Tab)
+        { }
+    }
 
-        [Test]
-        public void MainWindow_Verify_MaximizeWindow_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.MaximizeWindow_Button.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void MainWindow_Verify_CloseWindow_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.CloseWindow_Button.IsOnScreen.ShouldBeTrue();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            MailWasher.DeInit();
-        }
+    [TestFixture, Property("UiMap_MainWindow", "EventLog_Tab")]
+    public class Tests_MainWindowScreen_EventLog_Tab : Tab_Verification
+    {
+        public Tests_MainWindowScreen_EventLog_Tab()
+            : base(() => null,
+                  () => MailWasher.UiMap.MainWindow.EventLog_Tab)
+        { }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -11,9 +12,13 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
 {
     public class GeneralNotificationsScreenWhite : AppScreen, IGeneralNotificationsScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public GeneralNotificationsScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
         private TestStack.White.UIItems.CheckBox ChkBxNewMailPopup; // CheckBox 'Display balloon notification when new mail arrives'
@@ -30,7 +35,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNewMailPopup, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxNewMailPopup, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -46,7 +51,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNewMailSound, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxNewMailSound, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -62,7 +67,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxNotSpam, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxNotSpam, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -78,7 +83,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxErrorSound, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxErrorSound, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -94,7 +99,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -110,7 +115,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnResetPopupDuration, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnResetPopupDuration, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -126,7 +131,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.Slider.SliderWhite(this.SldrPopupDuration, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetSlider(this.SldrPopupDuration, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -142,7 +147,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.Notifications
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxSoundPath, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxSoundPath, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

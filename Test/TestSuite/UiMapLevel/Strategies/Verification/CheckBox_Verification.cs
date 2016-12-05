@@ -19,15 +19,9 @@ namespace Test.TestSuite.UiMapLevel.Strategies.Verification
         { }
 
         public CheckBox_Verification(Func<INavigator> path, Action precondition, Func<ICheckBox> SUT)
-            : base(path)
+            : base(path, SUT)
         {
             this._SUT = SUT;
-        }
-
-        [Test]
-        public void Is_OnScreen_On_Start()
-        {
-            this._SUT().IsOnScreen.ShouldBeTrue();
         }
 
         [Test]

@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using Test.UiMaps.MainWindow.Tabs.Settings.General.Factory;
+using Test.UiMaps.UiMapItems.Button.ButtonFactory;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -8,11 +10,13 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
     public class GeneralSettingsScreenWhite : AppScreen, IGeneralSettingsScreen
     {
         private readonly IGeneralSettingsFactory _generalSettingsFactory;
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
 
         public GeneralSettingsScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
         {
             this._generalSettingsFactory = new GeneralSettingsFactoryWhite(screenRepository);
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
         }
 
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
@@ -76,7 +80,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmApplication, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.LstBxItmApplication, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -92,7 +96,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.LstBxItmCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -108,7 +112,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmNotifications, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.LstBxItmNotifications, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -124,7 +128,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmWashMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.LstBxItmWashMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -140,7 +144,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmPerformance, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.LstBxItmPerformance, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -156,7 +160,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General
         {
             get
             {
-                return new UiMapItems.Button.ListItemToButtonWhite(this.LstBxItmUpdate, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.LstBxItmUpdate, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

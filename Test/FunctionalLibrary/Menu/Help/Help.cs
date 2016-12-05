@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Menu.Help
     {
         public Help()
         {
-            MailWasher.UiMap.MainWindow.Menu.Help_Button.Click();
+            MailWasher.Navigator.Menu.Help.Navigate();
         }
 
         private void Open_About_Window()

@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using Test.UiMaps.MainWindow.ScreenFactory;
+using Test.UiMaps.UiMapItems.Button.ButtonFactory;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -9,10 +11,13 @@ namespace Test.UiMaps.MainWindow
     {
         private readonly IScreenFactory _screenFactory;
 
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public MainWindowScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
         {
             this._screenFactory = new ScreenFactoryWhite(screenRepository);
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
         }
 
         private TestStack.White.UIItems.TabItems.Tab MainTabControl;
@@ -54,7 +59,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.Btn_Min_Window, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.Btn_Min_Window, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -70,7 +75,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.Btn_Max_Window, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.Btn_Max_Window, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -86,7 +91,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.Btn_Close_Window, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.Btn_Close_Window, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -102,7 +107,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Tab.TabWhite(this.TabItmInbox, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTab(this.TabItmInbox, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -118,7 +123,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Tab.TabWhite(this.TabItmRecycleBin, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTab(this.TabItmRecycleBin, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -134,7 +139,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Tab.TabWhite(this.TabItmSettings, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTab(this.TabItmSettings, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -150,7 +155,7 @@ namespace Test.UiMaps.MainWindow
         {
             get
             {
-                return new UiMapItems.Tab.TabWhite(this.TabItmEventLog, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTab(this.TabItmEventLog, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

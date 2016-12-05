@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Tabs.Settings.General.Notifications
     {
         public SettingsGeneralNotifications()
         {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.General.Notifications_Button.Click();
+            MailWasher.Navigator.Tabs.Settings.General.Notifications.Navigate();
         }
 
         private void Display_Balloon_Notifications_When_New_Mail_Arrives(bool enable)

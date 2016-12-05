@@ -1,4 +1,5 @@
 ﻿using Test.UiMaps.MainWindow.Tabs.RecycleBin.Factory;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 

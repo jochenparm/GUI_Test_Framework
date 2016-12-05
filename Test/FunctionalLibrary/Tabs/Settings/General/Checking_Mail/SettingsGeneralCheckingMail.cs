@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Tabs.Settings.General.Checking_Mail
     {
         public SettingsGeneralCheckingMail()
         {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.General.Checking_Mail_Button.Click();
+            MailWasher.Navigator.Tabs.Settings.General.Checking_Mail.Navigate();
         }
 
         private void Check_Default_Accounts_When_MailWasher_Starts(bool enable)

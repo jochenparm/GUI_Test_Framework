@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Test.FunctionalLibrary.Navigator.Tabs.Settings.Accounts;
-using Test.FunctionalLibrary.Navigator.Tabs.Settings.General;
+using Test.FunctionalLibrary.Tabs.Settings.Accounts;
+using Test.FunctionalLibrary.Tabs.Settings.General;
 
 namespace Test.FunctionalLibrary.Tabs.Settings
 {
@@ -12,18 +12,34 @@ namespace Test.FunctionalLibrary.Tabs.Settings
     {
         public Settings()
         {
-            MailWasher.UiMap.MainWindow.Settings_Tab.Open();
+            MailWasher.Navigator.Tabs.Settings.Navigate();
         }
 
-        IAccounts ISettings.Accounts
+        private ISettingsAccounts Accounts
         {
             get
             {
-                throw new NotImplementedException();
+                return new Accounts.SettingsAccounts();
             }
         }
 
-        IGeneral ISettings.General
+        ISettingsAccounts ISettings.Accounts
+        {
+            get
+            {
+                return this.Accounts;
+            }
+        }
+
+        private ISettingsGeneral General
+        {
+            get
+            {
+                return new General.SettingsGeneral();
+            }
+        }
+
+        ISettingsGeneral ISettings.General
         {
             get
             {

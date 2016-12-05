@@ -5,7 +5,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Test.UiMaps.UiMapItems.Button;
+using Test.UiMaps.UiMapItems.Button.ButtonFactory;
 using Test.UiMaps.UiMapItems.CheckBox;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -13,9 +15,13 @@ namespace Test.UiMaps.MainWindow.Menu.View
 {
     public class ViewMenuScreenWhite : AppScreen, IViewMenuScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public ViewMenuScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Field XYZ is never assigned to, and will always have its default value XX
 
@@ -55,7 +61,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmPreviewPane, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.MnuItmPreviewPane, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -63,7 +69,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmPreviewSplash, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.MnuItmPreviewSplash, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -71,7 +77,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmSideBar, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.MnuItmSideBar, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -79,7 +85,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmEventLog, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.MnuItmEventLog, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -87,7 +93,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmVideo, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmVideo, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -95,7 +101,7 @@ namespace Test.UiMaps.MainWindow.Menu.View
         {
             get
             {
-                return new UiMapItems.CheckBox.MenuItemToCheckBoxWhite(this.MnuItmShowHiddenEmails, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.MnuItmShowHiddenEmails, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

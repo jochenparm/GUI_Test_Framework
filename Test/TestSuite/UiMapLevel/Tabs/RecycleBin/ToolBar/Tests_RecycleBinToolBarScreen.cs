@@ -5,54 +5,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.TestSuite.UiMapLevel.Strategies.Verification;
 using Test.UiMaps;
 
 namespace Test.TestSuite.UiMapLevel.Tabs.RecycleBin.ToolBar
 {
-    [TestFixture, Property("UiMap", "RecycleBinTabScreen_ToolBar_UIItems")]
-    public class Tests_RecycleBinToolBarScreen
+    [TestFixture, Property("UiMap_RecycleBin_ToolBar", "Restore_Button")]
+    public class Tests_RecycleBinToolBarScreen_Restore_Button : Button_Verification
     {
-        [SetUp]
-        public void SetUp()
-        {
-            MailWasher.Init();
-            MailWasher.Navigator.Tabs.RecycleBin.Navigate();
-        }
+        public Tests_RecycleBinToolBarScreen_Restore_Button()
+            : base(() => MailWasher.Navigator.Tabs.RecycleBin.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.Restore_Button)
+        { }
+    }
 
-        [Test]
-        public void Verify_Restore_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.Restore_Button.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_RecycleBin_ToolBar", "EmptyBin_Button")]
+    public class Tests_RecycleBinToolBarScreen_EmptyBin_Button : Button_Verification
+    {
+        public Tests_RecycleBinToolBarScreen_EmptyBin_Button()
+            : base(() => MailWasher.Navigator.Tabs.RecycleBin.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.EmptyBin_Button)
+        { }
+    }
 
-        [Test]
-        public void Verify_EmptyBin_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.EmptyBin_Button.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_RecycleBin_ToolBar", "DisplayOption_Button")]
+    public class Tests_RecycleBinToolBarScreen_DisplayOption_Button : Button_Verification
+    {
+        public Tests_RecycleBinToolBarScreen_DisplayOption_Button()
+            : base(() => MailWasher.Navigator.Tabs.RecycleBin.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.DisplayOption_Button)
+        { }
+    }
 
-        [Test]
-        public void Verify_DisplayOption_Button_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.DisplayOption_Button.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_RecycleBin_ToolBar", "ShowAllEmailLogged_CheckBox")]
+    public class Tests_RecycleBinToolBarScreen_ShowAllEmailLogged_CheckBox : CheckBox_Verification
+    {
+        public Tests_RecycleBinToolBarScreen_ShowAllEmailLogged_CheckBox()
+            : base(() => MailWasher.Navigator.Tabs.RecycleBin.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.ShowAllEmailLogged_CheckBox)
+        { }
+    }
 
-        [Test]
-        public void Verify_ShowAllEmailLogged_CheckBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.ShowAllEmailLogged_CheckBox.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_HideAutodeletedEmails_CheckBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.HideAutodeletedEmails_CheckBox.IsOnScreen.ShouldBeTrue();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            MailWasher.DeInit();
-        }
+    [TestFixture, Property("UiMap_RecycleBin_ToolBar", "HideAutodeletedEmails_CheckBox")]
+    public class Tests_RecycleBinToolBarScreen_HideAutodeletedEmails_CheckBox : CheckBox_Verification
+    {
+        public Tests_RecycleBinToolBarScreen_HideAutodeletedEmails_CheckBox()
+            : base(() => MailWasher.Navigator.Tabs.RecycleBin.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.RecycleBin.ToolBar.HideAutodeletedEmails_CheckBox)
+        { }
     }
 }

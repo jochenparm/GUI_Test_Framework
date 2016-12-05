@@ -23,7 +23,8 @@ namespace Test.UiMaps.UiMapItems.Slider
 
         private void Set_Max()
         {
-            this._slider.SetValue(this._slider.Maximum);
+            this._slider.Value = this._slider.Maximum;
+            //this._slider.SetValue(this._slider.Maximum);
         }
 
         void ISlider.Set_Max()
@@ -42,7 +43,8 @@ namespace Test.UiMaps.UiMapItems.Slider
 
         private void Set_Min()
         {
-            this._slider.SetValue(this._slider.Minimum);
+            this._slider.Value = this._slider.Minimum;
+            //this._slider.SetValue(this._slider.Minimum);
         }
 
         void ISlider.Set_Min()
@@ -67,7 +69,7 @@ namespace Test.UiMaps.UiMapItems.Slider
             }
             set
             {
-                this._slider.SetValue(Convert.ToDouble(value));
+                this._slider.Value = Convert.ToDouble(value);
             }
         }
 

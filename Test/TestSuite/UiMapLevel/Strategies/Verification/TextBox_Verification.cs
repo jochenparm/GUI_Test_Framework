@@ -16,15 +16,13 @@ namespace Test.TestSuite.UiMapLevel.Strategies.Verification
         private readonly string testdata = "thisshouldberandomized";
 
         public TextBox_Verification(Func<INavigator> path, Func<ITextBox> SUT)
-            : base(path)
+            : this(path, () => { }, SUT)
+        { }
+
+        public TextBox_Verification(Func<INavigator> path, Action precondition, Func<ITextBox> SUT)
+            : base(path, SUT)
         {
             this._SUT = SUT;
-        }
-
-        [Test]
-        public void Is_OnScreen_On_Start()
-        {
-            this._SUT().IsOnScreen.ShouldBeTrue();
         }
 
         [Test]

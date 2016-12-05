@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Menu.View
     {
         public View()
         {
-            MailWasher.UiMap.MainWindow.Menu.View_Button.Click();
+            MailWasher.Navigator.Menu.View.Navigate();
         }
 
         private void Always_Show_Event_Log(bool enable)

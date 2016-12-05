@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Tabs.Settings.General.Performance
     {
         public SettingsGeneralPerformance()
         {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.General.Performance_Button.Click();
+            MailWasher.Navigator.Tabs.Settings.General.Performance.Navigate();
         }
 
         private void Collapse_Group_Header_On_Check_Mail(bool enable)

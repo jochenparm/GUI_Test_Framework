@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Navigator
 {
     public interface INavigator
     {
-        ITabs Tabs { get; }
-        IMenu Menu { get; }
+        ITabsNavigator Tabs { get; }
+        IMenuNavigator Menu { get; }
     }
 }

@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Tabs.Settings.General.Updates
     {
         public SettingsGeneralUpdates()
         {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.General.Updates_Button.Click();
+            MailWasher.Navigator.Tabs.Settings.General.Updates.Navigate();
         }
 
         private void Automatically_Check_For_Updates(bool enable)

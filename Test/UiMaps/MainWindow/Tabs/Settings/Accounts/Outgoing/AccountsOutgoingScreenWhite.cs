@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -11,9 +12,13 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
 {
     public class AccountsOutgoingScreenWhite : AppScreen, IAccountsOutgoingScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public AccountsOutgoingScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
         private TestStack.White.UIItems.ListBoxItems.ComboBox CmbBxAuthentication; // Dropdown menu 'Secure Connection'
@@ -33,7 +38,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxAddress, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxAddress, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -49,7 +54,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxPortNumber, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxPortNumber, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -65,7 +70,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxUsername, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxUsername, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -81,7 +86,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.PswdBxPassword, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.PswdBxPassword, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -97,7 +102,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxAuthentication, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxAuthentication, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -113,7 +118,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.HeaderSite, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.HeaderSite, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -129,7 +134,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnRestoreDefault, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnRestoreDefault, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -145,7 +150,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxAuthentication, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetDropDownMenu(this.CmbBxAuthentication, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -161,7 +166,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnUseIncomingAuth, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetRadioButton(this.RdoBtnUseIncomingAuth, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -177,7 +182,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.RadioButton.RadioButtonWhite(this.RdoBtnUseCustomAuth, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetRadioButton(this.RdoBtnUseCustomAuth, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -193,7 +198,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.Accounts.Outgoing
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

@@ -12,7 +12,7 @@ namespace Test.FunctionalLibrary.Tabs.Inbox
     {
         public Inbox()
         {
-            MailWasher.UiMap.MainWindow.Inbox_Tab.Open();
+            MailWasher.Navigator.Tabs.Inbox.Navigate();
         }
 
         private void Check_All_Email()

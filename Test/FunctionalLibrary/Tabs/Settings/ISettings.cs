@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Test.FunctionalLibrary.Navigator.Tabs.Settings.Accounts;
-using Test.FunctionalLibrary.Navigator.Tabs.Settings.General;
+using Test.FunctionalLibrary.Tabs.Settings.Accounts;
+using Test.FunctionalLibrary.Tabs.Settings.General;
 
 namespace Test.FunctionalLibrary.Tabs.Settings
 {
     public interface ISettings
     {
-        IAccounts Accounts { get; }
-        IGeneral General { get; }
+        ISettingsAccounts Accounts { get; }
+        ISettingsGeneral General { get; }
     }
 }

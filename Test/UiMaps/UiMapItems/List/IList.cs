@@ -12,6 +12,8 @@ namespace Test.UiMaps.UiMapItems.List
 
         bool IsSelected(string itemName);
 
+        bool Exists(string itemName);
+
         string Selected_Item { get; }
 
         int Number_Of_Items { get; }

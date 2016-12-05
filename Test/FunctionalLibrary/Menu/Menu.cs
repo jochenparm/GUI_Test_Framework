@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Test.FunctionalLibrary.Menu.Email;
+using Test.FunctionalLibrary.Menu.Factory;
 using Test.FunctionalLibrary.Menu.File;
 using Test.FunctionalLibrary.Menu.Help;
 using Test.FunctionalLibrary.Menu.View;
@@ -12,31 +13,18 @@ namespace Test.FunctionalLibrary.Menu
 {
     public class Menu : IMenu
     {
+        private readonly IFunctionalMenuFactory _menuFactory;
+
         public Menu()
         {
-        }
-
-        private Email.IEmail Email
-        {
-            get
-            {
-                return new Email.Email();
-            }
+            this._menuFactory = new FunctionalMenuFactory();
         }
 
         IEmail IMenu.Email
         {
             get
             {
-                return this.Email;
-            }
-        }
-
-        private File.IFile File
-        {
-            get
-            {
-                return new File.File();
+                return this._menuFactory.Get_Email();
             }
         }
 
@@ -44,15 +32,7 @@ namespace Test.FunctionalLibrary.Menu
         {
             get
             {
-                return this.File;
-            }
-        }
-
-        private Help.IHelp Help
-        {
-            get
-            {
-                return new Help.Help();
+                return this._menuFactory.Get_File();
             }
         }
 
@@ -60,15 +40,7 @@ namespace Test.FunctionalLibrary.Menu
         {
             get
             {
-                return this.Help;
-            }
-        }
-
-        private IView View
-        {
-            get
-            {
-                return new View.View();
+                return this._menuFactory.Get_Help();
             }
         }
 
@@ -76,7 +48,7 @@ namespace Test.FunctionalLibrary.Menu
         {
             get
             {
-                return this.View;
+                return this._menuFactory.Get_View();
             }
         }
     }

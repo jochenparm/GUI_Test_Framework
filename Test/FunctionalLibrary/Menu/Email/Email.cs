@@ -12,7 +12,7 @@ namespace Test.FunctionalLibrary.Menu.Email
     {
         public Email()
         {
-            MailWasher.UiMap.MainWindow.Menu.Email_Button.Click();
+            MailWasher.Navigator.Menu.Email.Navigate();
         }
 
         private void Add_Domain_To_Blacklist()

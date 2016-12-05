@@ -4,16 +4,21 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
 namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
 {
-    internal class GeneralCheckingMailScreenWhite : AppScreen, IGeneralCheckingMailScreen
+    public class GeneralCheckingMailScreenWhite : AppScreen, IGeneralCheckingMailScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public GeneralCheckingMailScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
         private TestStack.White.UIItems.CheckBox ChkBxCheckDefaultOnLaunch; // CheckBox 'Check default accounts when MailWasher starts'
@@ -31,7 +36,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
         {
             get
             {
-                return new UiMapItems.Slider.SliderWhite(this.SldrThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetSlider(this.SldrThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -47,7 +52,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
         {
             get
             {
-                return new UiMapItems.Slider.SliderWhite(this.SldrCheckThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetSlider(this.SldrCheckThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -63,7 +68,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -79,7 +84,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSpamThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnSpamThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -95,7 +100,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnCheckThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnCheckThrottle, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -111,7 +116,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxCheckDefaultOnLaunch, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxCheckDefaultOnLaunch, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -127,7 +132,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxPeriodicCheck, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxPeriodicCheck, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -143,7 +148,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxDisallowedTime, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxDisallowedTime, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -159,7 +164,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.CheckingMail
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxPeriodicCheck, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxPeriodicCheck, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

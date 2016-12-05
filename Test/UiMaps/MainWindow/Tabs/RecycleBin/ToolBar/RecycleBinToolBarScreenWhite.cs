@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -6,9 +7,13 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
 {
     public class RecycleBinToolBarScreenWhite : AppScreen, IRecycleBinToolBarScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public RecycleBinToolBarScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649
         private TestStack.White.UIItems.Button BtnRestoreMail;
@@ -22,7 +27,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnRestoreMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnRestoreMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -30,7 +35,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnEmptyBin, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnEmptyBin, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -38,7 +43,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.TglBtnQuickDisplay, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.TglBtnQuickDisplay, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -46,7 +51,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxShowAllMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxShowAllMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -54,7 +59,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.ToolBar
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxHideAutodeletedEmails, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxHideAutodeletedEmails, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

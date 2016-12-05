@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Test.FunctionalLibrary.Navigator.Tabs.Settings;
 using Test.FunctionalLibrary.Tabs.Inbox;
+using Test.FunctionalLibrary.Tabs.Settings;
 
 namespace Test.FunctionalLibrary.Tabs
 {

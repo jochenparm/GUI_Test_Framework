@@ -5,55 +5,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.TestSuite.UiMapLevel.Strategies.Verification;
 using Test.UiMaps;
 
 namespace Test.TestSuite.UiMapLevel.Tabs.RecycleBin.SearchBar
 {
-    [TestFixture, Property("UiMap", "RecycleBinTabScreen_SearchBar_UIItems")]
-    public class Tests_RecycleBinSearchBarScreen
+    [TestFixture, Property("UiMap_RecycleBin_SearchBar", "Clear_Search_Button")]
+    public class Tests_RecycleBinSearchBarScreen_Clear_Search_Button : Button_Verification
     {
-        [SetUp]
-        public void SetUp()
-        {
-            MailWasher.Init();
-            MailWasher.Navigator.Tabs.RecycleBin.Navigate();
-        }
+        public Tests_RecycleBinSearchBarScreen_Clear_Search_Button()
+            : base(() => MailWasher.Navigator.Tabs.RecycleBin.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Clear_Search_Button)
+        { }
+    }
 
-        [Test]
-        public void Verify_Search_TextBox_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Search_TextBox.IsOnScreen.ShouldBeTrue();
-        }
+    [TestFixture, Property("UiMap_RecycleBin_SearchBar", "Search_TextBox")]
+    public class Tests_RecycleBinSearchBarScreen_Search_TextBox : TextBox_Verification
+    {
+        public Tests_RecycleBinSearchBarScreen_Search_TextBox()
+            : base(() => MailWasher.Navigator.Tabs.RecycleBin.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Search_TextBox)
+        { }
+    }
 
-        [Test]
-        public void Verify_Clear_Search_Button_Is_OffScreen_Before_Filling_In_Search_TextBox()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Clear_Search_Button.IsOnScreen.ShouldBeFalse();
-        }
+    [TestFixture, Property("UiMap_RecycleBin_SearchBar", "Time_Window_DropDownMenu")]
+    public class Tests_RecycleBinSearchBarScreen_Time_Window_DropDownMenu : DropDownMenu_Verification
+    {
+        public Tests_RecycleBinSearchBarScreen_Time_Window_DropDownMenu()
+            : base(() => MailWasher.Navigator.Tabs.RecycleBin.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Time_Window_DropDownMenu)
+        { }
+    }
 
-        [Test]
-        public void Verify_Clear_Search_Button_Is_OnScreen_After_Filling_In_Search_TextBox()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Search_TextBox.Content = "test";
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Clear_Search_Button.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_Time_Window_DropDownMenu_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Time_Window_DropDownMenu.IsOnScreen.ShouldBeTrue();
-        }
-
-        [Test]
-        public void Verify_Number_Of_Emails_Displayed_TextLabel_Is_OnScreen_On_Start()
-        {
-            MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Number_Of_Emails_Displayed_TextLabel.IsOnScreen.ShouldBeTrue();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            MailWasher.DeInit();
-        }
+    [TestFixture, Property("UiMap_RecycleBin_SearchBar", "Number_Of_Emails_Displayed_TextLabel")]
+    public class Tests_RecycleBinSearchBarScreen_Number_Of_Emails_Displayed_TextLabel : TextLabel_Verification
+    {
+        public Tests_RecycleBinSearchBarScreen_Number_Of_Emails_Displayed_TextLabel()
+            : base(() => MailWasher.Navigator.Tabs.RecycleBin.Navigate(),
+                  () => MailWasher.UiMap.MainWindow.Tabs.RecycleBin.SearchBar.Number_Of_Emails_Displayed_TextLabel)
+        { }
     }
 }

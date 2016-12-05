@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Menu.File
     {
         public File()
         {
-            MailWasher.UiMap.MainWindow.Menu.File_Button.Click();
+            MailWasher.Navigator.Menu.File.Navigate();
         }
 
         private void Check_Mail()

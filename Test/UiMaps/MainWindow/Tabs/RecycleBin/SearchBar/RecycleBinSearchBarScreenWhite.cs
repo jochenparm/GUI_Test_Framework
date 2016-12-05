@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -11,9 +12,13 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.SearchBar
 {
     public class RecycleBinSearchBarScreenWhite : AppScreen, IRecycleBinSearchBarScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public RecycleBinSearchBarScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
         private TestStack.White.UIItems.TextBox TxtBxSearch; //TextBox 'Search 'From' and/or 'Subject''
@@ -26,7 +31,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.SearchBar
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxSearch, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxSearch, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -42,7 +47,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.SearchBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnClearFrom, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnClearFrom, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -58,7 +63,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.SearchBar
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxPeriodAlt, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetDropDownMenu(this.CmbBxPeriodAlt, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -74,7 +79,7 @@ namespace Test.UiMaps.MainWindow.Tabs.RecycleBin.SearchBar
         {
             get
             {
-                return new UiMapItems.TextLabel.TextLabelWhite(this.TxtBlkDisplayValue, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextLabel(this.TxtBlkDisplayValue, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

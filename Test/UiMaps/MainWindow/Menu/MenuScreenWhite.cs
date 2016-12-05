@@ -6,6 +6,8 @@ using Test.UiMaps.MainWindow.Menu.File;
 using Test.UiMaps.MainWindow.Menu.Help;
 using Test.UiMaps.MainWindow.Menu.View;
 using Test.UiMaps.UiMapItems.Button;
+using Test.UiMaps.UiMapItems.Button.ButtonFactory;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -14,6 +16,7 @@ namespace Test.UiMaps.MainWindow.Menu
     public class MenuScreenWhite : AppScreen, IMenuScreen
     {
         private readonly IMenuFactory _menuFactory;
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
         private TestStack.White.UIItems.MenuItems.Menu MnuItmFile; //Menu item 'File'
         private TestStack.White.UIItems.MenuItems.Menu MnuItmMessage; //Menu item 'Email'
@@ -26,6 +29,7 @@ namespace Test.UiMaps.MainWindow.Menu
             : base(window, screenRepository)
         {
             this._menuFactory = new MenuFactoryWhite(screenRepository);
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
         }
 
         private IFileMenuScreen File
@@ -64,7 +68,7 @@ namespace Test.UiMaps.MainWindow.Menu
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmFile, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmFile, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -72,7 +76,7 @@ namespace Test.UiMaps.MainWindow.Menu
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmMessage, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmMessage, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -80,7 +84,7 @@ namespace Test.UiMaps.MainWindow.Menu
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmHelp, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmHelp, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -88,7 +92,7 @@ namespace Test.UiMaps.MainWindow.Menu
         {
             get
             {
-                return new UiMapItems.Button.MenuItemToButtonWhite(this.MnuItmView, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.MnuItmView, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

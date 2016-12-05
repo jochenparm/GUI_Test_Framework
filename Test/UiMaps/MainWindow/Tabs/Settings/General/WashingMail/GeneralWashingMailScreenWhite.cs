@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -11,9 +12,13 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
 {
     public class GeneralWashingMailScreenWhite : AppScreen, IGeneralWashingMailScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public GeneralWashingMailScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649 //Suppresses the 'is never assigned to, and will always have its default value null' warning
         private TestStack.White.UIItems.CheckBox ChkBxMinimiseAfterWash; // CheckBox 'Minimize MailWasher after Wash Mail'
@@ -28,7 +33,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxMinimiseAfterWash, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxMinimiseAfterWash, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -44,7 +49,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxLaunchProgram, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxLaunchProgram, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -60,7 +65,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.CheckBox.CheckBoxWhite(this.ChkBxUseDefaultIcon, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetCheckBox(this.ChkBxUseDefaultIcon, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -76,7 +81,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxProgramList, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetDropDownMenu(this.CmbBxProgramList, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -92,7 +97,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.TextBox.TextBoxWhite(this.TxtBxCustomPath, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextBox(this.TxtBxCustomPath, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -108,7 +113,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Settings.General.WashingMail
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnSave, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 

@@ -10,7 +10,7 @@ namespace Test.FunctionalLibrary.Tabs.Settings.Accounts.General
     {
         public SettingsAccountsGeneral()
         {
-            MailWasher.UiMap.MainWindow.Tabs.Settings.Accounts.General_Button.Click();
+            MailWasher.Navigator.Tabs.Settings.Accounts.General.Navigate();
         }
 
         private void Include_In_Default_Mail_Check(bool enable)

@@ -4,6 +4,7 @@ using Test.UiMaps.UiMapItems.Button;
 using Test.UiMaps.UiMapItems.CheckBox;
 using Test.UiMaps.UiMapItems.DropDownMenu;
 using Test.UiMaps.UiMapItems.TextLabel;
+using Test.UiMaps.UiMapItems.UiMapItemsFactory;
 using TestStack.White.ScreenObjects;
 using TestStack.White.UIItems.WindowItems;
 
@@ -11,9 +12,13 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar
 {
     public class InboxToolBarScreenWhite : AppScreen, IInboxToolBarScreen
     {
+        private readonly IUiMapItemsFactory _uiMapItemsFactory;
+
         public InboxToolBarScreenWhite(Window window, ScreenRepository screenRepository)
             : base(window, screenRepository)
-        { }
+        {
+            this._uiMapItemsFactory = new UiMapItemsFactoryWhite();
+        }
 
 #pragma warning disable 0649
         private TestStack.White.UIItems.Button BtnCheckMail;
@@ -30,7 +35,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnWashMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnWashMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -38,7 +43,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -46,7 +51,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnLaunchMailProgram, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnLaunchMailProgram, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -54,7 +59,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.TglBtnSearch, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.TglBtnSearch, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -62,7 +67,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.TglBtnQuickDisplay, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.TglBtnQuickDisplay, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -70,7 +75,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar
         {
             get
             {
-                return new UiMapItems.Button.ButtonWhite(this.BtnRegister, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetButton(this.BtnRegister, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -78,7 +83,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar
         {
             get
             {
-                return new UiMapItems.DropDownMenu.DropDownMenuWhite(this.CmbBxCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetDropDownMenu(this.CmbBxCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
@@ -86,7 +91,7 @@ namespace Test.UiMaps.MainWindow.Tabs.Inbox.ToolBar
         {
             get
             {
-                return new UiMapItems.TextLabel.TextLabelWhite(this.LblCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
+                return this._uiMapItemsFactory.GetTextLabel(this.LblCheckMail, MethodBase.GetCurrentMethod().Name.Replace("get_", ""));
             }
         }
 
