@@ -41,12 +41,7 @@ namespace Test.FunctionalLibrary.Tabs.Inbox
         {
             get
             {
-                bool returnValue = false;
-                if(MailWasher.UiMap.MainWindow.Tabs.Inbox.ToolBar.CheckMail_TextLabel.Content.Equals("Stop Checking"))
-                {
-                    returnValue = true;
-                }
-                return returnValue;
+                return MailWasher.UiMap.MainWindow.Tabs.Inbox.ToolBar.CheckMail_TextLabel.Content.Equals("Stop Checking");
             }
         }
 
@@ -72,40 +67,25 @@ namespace Test.FunctionalLibrary.Tabs.Inbox
             return this;
         }
 
-        private bool Wait_For_Is_Checking_Email(int seconds)
+        private bool Wait_For_(Func<bool> conditionToTurnTrue, int seconds)
         {
             Stopwatch sw = Stopwatch.StartNew();
-            while(!Is_Checking_Email && (sw.ElapsedMilliseconds <= (seconds * 1000)))
+            while(!conditionToTurnTrue.Invoke() && (sw.ElapsedMilliseconds <= (seconds * 1000)))
             {
                 Thread.Sleep(1);
             }
             sw.Stop();
-            if((sw.ElapsedMilliseconds - (seconds * 1000)) >= 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return ((sw.ElapsedMilliseconds - (seconds * 1000)) < 0);
+        }
+
+        private bool Wait_For_Is_Checking_Email(int seconds)
+        {
+            return this.Wait_For_(() => Is_Checking_Email, seconds);
         }
 
         private bool Wait_For_Isnt_Checking_Email(int seconds)
         {
-            Stopwatch sw = Stopwatch.StartNew();
-            while(Is_Checking_Email && (sw.ElapsedMilliseconds <= (seconds * 1000)))
-            {
-                Thread.Sleep(1);
-            }
-            sw.Stop();
-            if((sw.ElapsedMilliseconds - (seconds * 1000)) >= 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return this.Wait_For_(() => !Is_Checking_Email, seconds);
         }
 
         bool IInbox.Wait_For_Is_Checking_Email(int seconds)
