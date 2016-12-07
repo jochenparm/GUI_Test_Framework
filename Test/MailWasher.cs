@@ -16,7 +16,7 @@ using TestStack.White.ScreenObjects;
 //server type: IMAP
 //server address: imap.gmail.com
 //account username : guitestframework@gmail.com
-//account password : altranheraeus
+
 //SMTP server address: smtp.gmail.com
 
 namespace Test
